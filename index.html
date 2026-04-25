@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta name="google-site-verification" content="9DxnhBcz9UiGDvjBI4UeN_iB1fcgx5CTBc2oiXrJ-qM" />    
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="9DxnhBcz9UiGDvjBI4UeN_iB1fcgx5CTBc2oiXrJ-qM" />
+
   <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+  <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -14,360 +14,917 @@
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106099953', 'ym');
 
     ym(106099953, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106099953" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-  
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/106099953" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 
-  <meta charset="UTF-8" />
-  <title>Igor Korkin, Ph.D. – OS Security Research</title>
+  <title>Igor Korkin, Ph.D. - OS Security Research</title>
   <meta
     name="description"
-    content="Igor Korkin, Ph.D. OS security researcher specializing in kernel security, hypervisors, rootkit detection, memory forensics, and operating system protection."
+    content="Igor Korkin, Ph.D. Operating-system security researcher specializing in Windows kernel protection, hypervisors, memory forensics, rootkit detection, ETW/WMI/ALPC attacks, and advanced cyber threat mitigation."
   />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://igorkorkin.github.io/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Igor Korkin, Ph.D. - OS Security Research" />
+  <meta property="og:description" content="Research, talks, publications, and monograph on operating-system kernel protection." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://igorkorkin.github.io/" />
+  <meta property="og:image" content="https://igorkorkin.github.io/igor.korkin.photo.jpg" />
+
   <style>
     :root {
-      --bg: #f5f5f7;
-      --bg-card: #ffffff;
-      --border: #e2e2ea;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
+      --text: #1f2933;
+      --muted: #5b6673;
+      --line: #d8dee7;
+      --link: #1756a9;
+      --visited: #5c3b94;
+      --bg-soft: #f6f8fb;
     }
+
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
+      padding: 34px 18px 56px;
+      color: var(--text);
+      background: var(--bg-soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
     }
+
     a {
-      color: var(--accent);
+      color: var(--link);
       text-decoration: none;
     }
+
+    a:visited {
+      color: var(--visited);
+    }
+
     a:hover {
       text-decoration: underline;
     }
+
     .page {
-      max-width: 1080px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 32px 20px 48px;
+    }
+
+    header {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      grid-column-gap: 32px;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 26px;
+      align-items: start;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: #ffffff;
     }
-    .sidebar {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 24px 20px 20px;
-      border: 1px solid var(--border);
-      text-align: center;
-      align-self: flex-start;
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.35rem;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: 0;
     }
-    .sidebar h1 {
-      font-size: 1.4rem;
-      margin: 16px 0 4px;
+
+    .subtitle {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
-    .sidebar .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+
+    .links {
+      margin: 0;
+      color: var(--muted);
     }
-    .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: #d1d5db;
-      margin: 0 auto;
+
+    .profile-links {
+      margin-top: 5px;
+      font-size: 0.96rem;
+    }
+
+    .links a {
+      white-space: nowrap;
+    }
+
+    .links .nav-monograph {
+      color: #a32020;
+      font-weight: 700;
+    }
+
+    .links .nav-monograph:visited {
+      color: #a32020;
+    }
+
+    .photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--bg-soft);
+    }
+
+    main {
+      display: block;
+      margin-top: 26px;
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 22px;
+      align-items: start;
+      margin-top: 24px;
+    }
+
+    .about-lead {
+      margin: 24px 0 0;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .lead-grid .about-lead {
+      margin: 0;
+    }
+
+    .section-heading {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: #6b7280;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--line);
     }
-    .sidebar-section {
-      margin-top: 16px;
-      font-size: 0.92rem;
+
+    .section-heading h2 {
+      margin: 0;
+      padding: 0;
+      border-bottom: 0;
     }
-    .monograph-card {
-      display: block;
-      margin: 18px auto 4px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-      color: var(--text-main);
-      text-align: left;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
     }
-    .monograph-card:hover {
-      border-color: #bfdbfe;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
-      text-decoration: none;
-      transform: translateY(-1px);
+
+    .lang-btn {
+      min-width: 38px;
+      min-height: 28px;
+      padding: 3px 9px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.88rem;
+      cursor: pointer;
     }
-    .monograph-card img {
-      display: block;
-      width: 100%;
-      max-width: 180px;
-      margin: 0 auto 10px;
-      border-radius: 8px;
-      border: 1px solid #e5e7eb;
-      background: #f3f4f6;
-    }
-    .monograph-card .eyebrow {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.74rem;
-      line-height: 1.2;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .monograph-card strong {
-      display: block;
-      font-size: 0.96rem;
-      line-height: 1.3;
-      color: var(--text-main);
-    }
-    .monograph-card .cta {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.86rem;
-      color: var(--accent);
+
+    .lang-btn.active {
+      border-color: var(--text);
+      color: var(--text);
       font-weight: 600;
     }
-    .sidebar-section h3 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #9ca3af;
-      margin-bottom: 6px;
+
+    .lang-panel {
+      display: none;
     }
-    .sidebar-links a {
+
+    body[data-lang="en"] .lang-panel-en,
+    body[data-lang="ru"] .lang-panel-ru {
       display: block;
-      margin: 2px 0;
     }
-    .content {
+
+    .updates {
+      margin: 22px 0 0;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .updates h2 {
+      margin-bottom: 8px;
+      border-bottom: 0;
+      padding-bottom: 0;
+      font-size: 1.12rem;
+    }
+
+    .updates ul {
+      padding-left: 18px;
+    }
+
+    .updates li:last-child {
+      margin-bottom: 0;
+    }
+
+    .topic-list {
       display: flex;
-      flex-direction: column;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
     }
-    .block {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 22px 24px 20px;
-      border: 1px solid var(--border);
-    }
-    .block h2 {
-      font-size: 1.2rem;
-      margin: 0 0 10px;
-    }
-    .block p {
-      font-size: 0.98rem;
-      line-height: 1.55;
-      margin: 0 0 8px;
-      color: var(--text-muted);
-    }
-    .tagline {
-      font-size: 0.98rem;
-      line-height: 1.5;
-    }
-    .pill {
+
+    .topic-list span {
       display: inline-block;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-radius: 999px;
-      padding: 3px 10px;
-      font-size: 0.8rem;
-      margin: 3px 6px 0 0;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      color: var(--text);
+      font-size: 0.91rem;
     }
-    .list {
-      list-style: none;
-      padding-left: 0;
-      margin: 4px 0 0;
+
+    .topic-list + h3 {
+      margin-top: 16px;
+    }
+
+    section {
+      margin: 0 0 28px;
+    }
+
+    main > div > section {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--line);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.28rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 0 0 4px;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 11px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 0 0 9px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .venue {
+      color: var(--muted);
+    }
+
+    .paper {
+      margin-bottom: 15px;
+    }
+
+    .paper p {
+      margin-bottom: 4px;
+    }
+
+    .conference-table {
+      width: 100%;
+      border-collapse: collapse;
       font-size: 0.95rem;
     }
-    .list li {
-      margin-bottom: 6px;
+
+    .conference-table th,
+    .conference-table td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
     }
-    .list time {
-      font-size: 0.82rem;
-      color: #9ca3af;
-      margin-right: 6px;
+
+    .conference-table th {
+      color: var(--muted);
+      font-weight: 700;
     }
-    .pub-title {
-      font-weight: 500;
+
+    .conference-table td:first-child {
+      width: 76px;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
     }
-    .pub-venue {
-      font-size: 0.86rem;
-      color: #6b7280;
+
+    .side-note {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      font-size: 0.94rem;
     }
-    @media (max-width: 800px) {
-      .page {
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
+
+    .book-cover {
+      display: block;
+      width: 100%;
+      max-width: 190px;
+      margin: 0 auto 10px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .bio-ru {
+      color: #2c3540;
+    }
+
+    .closing {
+      margin-top: 8px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .closing h2 {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 8px;
+    }
+
+    .closing-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .closing-links a {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--link);
+    }
+
+    footer {
+      margin-top: 16px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding-top: 22px;
       }
-      .sidebar {
-        order: -1;
+
+      header,
+      .lead-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .photo {
+        width: 140px;
+        height: 140px;
+      }
+
+      .closing-links {
+        display: block;
+      }
+
+      .closing-links a {
+        margin: 0 6px 8px 0;
       }
     }
   </style>
 </head>
-<body>
+
+<body data-lang="en">
   <div class="page">
-    <!-- LEFT COLUMN -->
-    <aside class="sidebar">
-      <div class="avatar">
-         <img src="igor.korkin.photo.jpg" alt="avatar" class="avatar">
+    <header>
+      <div>
+        <h1>Igor Korkin, PhD</h1>
+        <p class="subtitle">Lead Security Researcher &amp; Developer | Black Hat Speaker | PhD in Cybersecurity | Author of Monograph</p>
+        <p class="links">
+          Key:
+          <a class="nav-monograph" href="https://igorkorkin.github.io/monograph/">Monograph</a> /
+          <a href="details.html">Details</a> /
+          <a href="cv/resume.igor.korkin.pdf">CV</a> /
+          <a href="https://igorkorkin.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a>
+        </p>
+        <p class="links profile-links">
+          Contact:
+          <a href="mailto:igor.korkin@gmail.com">E-mail</a> /
+          <a href="https://t.me/IgorKorkin" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </p>
+        <p class="links profile-links">
+          Professional:
+          <a href="https://www.linkedin.com/in/korkinigor/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
+          <a href="https://github.com/IgorKorkin" target="_blank" rel="noopener noreferrer">GitHub</a> /
+          <a href="https://patents.google.com/patent/US20230289465A1/en" target="_blank" rel="noopener noreferrer">Google Patents</a> /
+          <a href="https://ieeexplore.ieee.org/author/37088908930" target="_blank" rel="noopener noreferrer">IEEE Xplore</a>
+        </p>
+        <p class="links profile-links">
+          Academic:
+          <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
+          <a href="https://orcid.org/0000-0001-7640-2792" target="_blank" rel="noopener noreferrer">ORCID</a> /
+          <a href="https://arxiv.org/a/korkin_i_1.html" target="_blank" rel="noopener noreferrer">arXiv</a> /
+          <a href="https://dblp.uni-trier.de/pers/hd/k/Korkin:Igor" target="_blank" rel="noopener noreferrer">DBLP</a> /
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57219459633" target="_blank" rel="noopener noreferrer">Scopus</a> /
+          <a href="https://www.webofscience.com/wos/author/record/294131" target="_blank" rel="noopener noreferrer">Web of Science</a> /
+          <a href="https://www.webofscience.com/wos/author/record/N-2544-2013" target="_blank" rel="noopener noreferrer">ResearcherID</a> /
+          <a href="https://www.researchgate.net/profile/Igor-Korkin-2" target="_blank" rel="noopener noreferrer">ResearchGate</a> /
+          <a href="https://openreview.net/profile?id=~Igor_Korkin1" target="_blank" rel="noopener noreferrer">OpenReview</a> /
+          <a href="https://www.semanticscholar.org/author/3114387" target="_blank" rel="noopener noreferrer">Semantic Scholar</a> /
+          <a href="https://www.elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">eLibrary / RSCI</a> /
+          <a href="https://www.dslib.net/author/igor.korkin.html" target="_blank" rel="noopener noreferrer">DsLib.net</a> /
+          <a href="https://mephi.academia.edu/IgorKorkin" target="_blank" rel="noopener noreferrer">Academia.edu</a>
+        </p>
       </div>
-      <h1>Igor Korkin, Ph.D.</h1>
-      <div class="subtitle">
-        OS security researcher
-      </div>
+      <img class="photo" src="igor.korkin.photo.jpg" alt="Igor Korkin" />
+    </header>
 
-      <a class="monograph-card" href="https://igorkorkin.github.io/monograph/" aria-label="Open monograph website">
-        <img src="monograph-cover.jpg" alt="Kernel Protection of Operating Systems Under Countermeasures book cover">
-        <span class="eyebrow">New monograph</span>
-        <strong>Kernel Protection of Operating Systems Under Countermeasures</strong>
-        <span class="cta">Open monograph site</span>
-      </a>
-
-      <div class="sidebar-section">
-        <h3>Affiliation</h3>
-        <div style="font-size:0.9rem;">
-          Security research &amp; consulting<br/>
-          Moscow, Russia
+    <div class="lead-grid">
+      <section class="about-lead" id="about">
+        <div class="section-heading">
+          <h2><span class="lang-panel lang-panel-en">About</span><span class="lang-panel lang-panel-ru">Обо мне</span></h2>
+          <div class="lang-switch" aria-label="About language">
+            <button class="lang-btn active" type="button" data-lang="en">EN</button>
+            <button class="lang-btn" type="button" data-lang="ru">RU</button>
+          </div>
         </div>
-      </div>
 
-      <div class="sidebar-section sidebar-links">
-        <h3>Links</h3>
-        <a href="https://github.com/IgorKorkin">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ">Google Scholar</a>
-        <a href="https://orcid.org/0000-0001-7640-2792">ORCID</a>
-        <a href="https://igorkorkin.blogspot.com/">Blog</a>
-        <a href="https://sites.google.com/site/igorkorkin/home">Full research page</a>
-      </div>
-
-      <div class="sidebar-section">
-        <h3>Contact</h3>
-        <div style="font-size:0.9rem;">
-          Telegram: <a href="https://t.me/IgorKorkin">@IgorKorkin</a><br/>
-          E‑mail: <span>igor.korkin at gmail.com</span>
+        <div class="lang-panel lang-panel-en">
+          <p>
+            I am an operating-system security researcher focusing on Windows kernel protection, hypervisors,
+            rootkit detection, memory forensics, and reliability of security telemetry under active countermeasures.
+            My work studies how advanced attackers bypass low-level defenses and how these defenses can be made
+            more robust.
+          </p>
+          <p>
+            Korkin Igor Yurievich, PhD in Cybersecurity (05.13.19), is an alumnus of Department No. 42,
+            National Research Nuclear University MEPhI, Moscow, Russia; Lead Researcher in international
+            cybersecurity projects at Huawei Technologies (China) and Binarly (USA), with expertise in operating
+            system security, hypervisors (Intel VT-x/EPT), and advanced cyber threat mitigation.
+          </p>
+          <p>
+            With a publication record of over 50 scholarly works, I have authored research papers, hold a patent,
+            and have presented research at major cybersecurity conferences in the USA, Europe, Asia, and Russia.
+            I also serve as an invited academic supervisor at MEPhI, mentoring undergraduate research in
+            information security.
+          </p>
+          <p>
+            This site keeps the front page intentionally compact. A fuller record of publications, talks, patents,
+            recorded presentations, research profiles, and materials is available on the
+            <a href="details.html">details page</a>.
+          </p>
+          <div class="topic-list" aria-label="Research areas">
+            <span>Windows kernel security</span>
+            <span>Intel VT-x / EPT</span>
+            <span>Hypervisor-based protection</span>
+            <span>Memory forensics</span>
+            <span>Rootkit detection</span>
+            <span>ETW, WMI, ALPC</span>
+          </div>
+          <h3>Education</h3>
+          <ul>
+            <li>
+              <span class="date">Ph.D.</span> Cybersecurity and Computer Science, Moscow Engineering Physics Institute
+              / NRNU MEPhI, Department of Cryptology and Cybersecurity. Dissertation:
+              <em>Detection Hidden Virtualization-Based Malware</em>.
+            </li>
+            <li>
+              <span class="date">M.S.</span> Cybersecurity and Computer Science, Moscow Engineering Physics Institute
+              / NRNU MEPhI. Thesis: <em>Detection Hidden Malware in Windows Kernel</em>.
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div class="sidebar-section">
-        <h3>CV</h3>
-        <a href="https://drive.google.com/file/d/1-tNMQf85YZBvPX80huoKuMg6Wc9mEYSg/view?usp=drive_link">(PDF)</a>        
-      </div>
-    </aside>
-
-    <!-- RIGHT COLUMN -->
-    <main class="content">
-
-      <section class="block">
-        <h2>About me</h2>
-        <p class="tagline">
-          OS security researcher with over 10 years of experience in Windows and Linux kernel security,
-          rootkit detection, memory forensics, and bare‑metal hypervisors. My work focuses on designing
-          protection mechanisms and studying how advanced attackers can bypass them.
-        </p>
-        <p>
-          I have published more than 40 research papers and a patent, and presented my work at conferences
-          including BlackHat (USA &amp; Europe), HITB, LABScon, ADFSL, REcon, and others.
-        </p>
-      </section>
-
-      <section class="block">
-        <h2>Research interests</h2>
-        <p>
-          I am particularly interested in:
-        </p>
-        <div>
-          <span class="pill">Kernel‑mode security</span>
-          <span class="pill">Hypervisors &amp; VT‑x/EPT</span>
-          <span class="pill">Memory forensics</span>
-          <span class="pill">Rootkit detection</span>
-          <span class="pill">EDR / AV evasion &amp; defenses</span>
-          <span class="pill">Security analytics for OS events</span>
+        <div class="lang-panel lang-panel-ru" lang="ru">
+          <p>
+            Я исследователь безопасности операционных систем. Основные темы моей работы: защита ядра Windows,
+            гипервизоры, обнаружение руткитов, анализ памяти и надёжность телеметрии средств защиты в условиях
+            активного противодействия.
+          </p>
+          <p>
+            Коркин Игорь Юрьевич, кандидат технических наук (05.13.19), выпускник кафедры № 42 Национального
+            исследовательского ядерного университета «МИФИ»; ведущий исследователь международных проектов по
+            кибербезопасности в компаниях Huawei Technologies (Китай) и Binarly (США); системный программист
+            в области информационной безопасности операционных систем, гипервизорных технологий (VT-x/EPT) и
+            противодействия перспективным киберугрозам.
+          </p>
+          <p>
+            Автор более 50 научных работ, включая статьи, патент и доклады на международных конференциях
+            по кибербезопасности в США, Европе, Азии и России; научный руководитель дипломных и
+            научно-исследовательских работ студентов МИФИ по направлению «Информационная безопасность».
+          </p>
+          <p>
+            Главная страница оставлена компактной. Более полный список публикаций, докладов, патентов,
+            записей выступлений, научных профилей и материалов собран на странице
+            <a href="details.html">Details</a>.
+          </p>
+          <div class="topic-list" aria-label="Research areas">
+            <span>Windows kernel security</span>
+            <span>Intel VT-x / EPT</span>
+            <span>Hypervisor-based protection</span>
+            <span>Memory forensics</span>
+            <span>Rootkit detection</span>
+            <span>ETW, WMI, ALPC</span>
+          </div>
+          <h3>Education</h3>
+          <ul>
+            <li>
+              <span class="date">Ph.D.</span> Cybersecurity and Computer Science, Moscow Engineering Physics Institute
+              / NRNU MEPhI, Department of Cryptology and Cybersecurity. Dissertation:
+              <em>Detection Hidden Virtualization-Based Malware</em>.
+            </li>
+            <li>
+              <span class="date">M.S.</span> Cybersecurity and Computer Science, Moscow Engineering Physics Institute
+              / NRNU MEPhI. Thesis: <em>Detection Hidden Malware in Windows Kernel</em>.
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="block">
-        <h2>Recent highlights</h2>
-        <ul class="list">
-          <li>
-            <time>2026</time>
-            Published the monograph
-            <a class="pub-title" href="https://igorkorkin.github.io/monograph/">Kernel Protection of Operating Systems Under Countermeasures</a>,
-            dedicated to Windows kernel protection, hypervisor-based defenses, rootkit detection, and stealth hypervisor analysis.
-          </li>
-          <li>
-            <time>2023</time>
-            Co‑authored <span class="pub-title">ALPChecker – Detecting Spoofing and Blinding Attacks</span>,
-            presented at HITBSecConf 2023 (Phuket) and published on arXiv.
-          </li>
-          <li>
-            <time>2022</time>
-            Presented <span class="pub-title">Blasting Event‑Driven Cornucopia: WMI‑based User‑Space Attacks Blind SIEMs and EDRs</span>
-            at BlackHat USA, LABScon, and Ekoparty.
-          </li>
-          <li>
-            <time>2021</time>
-            Presented <span class="pub-title">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</span> at BlackHat Europe.
-          </li>
-          <li>
-            <time>2021</time>
-            Published <span class="pub-title">Protected Process Light is not Protected: MemoryRanger Fills the Gap Again</span>
-            at the IEEE S&amp;P Workshops (SADFE).
-          </li>
-          <li>
-            <time>2018–2020</time>
-            Developed and presented <span class="pub-title">MemoryRanger</span> – a VT‑x/EPT‑based hypervisor that isolates Windows kernel drivers.
-          </li>
-        </ul>
-      </section>
+      <aside class="lead-aside">
+        <section class="side-note">
+          <a href="https://igorkorkin.github.io/monograph/">
+            <img class="book-cover" src="monograph-cover.jpg" alt="Kernel Protection of Operating Systems Under Countermeasures book cover" />
+          </a>
+          <h2>Monograph</h2>
+          <p>
+            <a href="https://igorkorkin.github.io/monograph/">Kernel Protection of Operating Systems Under Countermeasures</a>
+            is a 2026 monograph on Windows kernel protection, hypervisor-based defenses, memory monitoring,
+            rootkits, and stealth hypervisor detection.
+          </p>
+        </section>
+      </aside>
+    </div>
 
-      <section class="block">
-        <h2>Selected publications</h2>
-        <ul class="list">
-          <li>
-            <span class="pub-title">ALPChecker – Detecting Spoofing and Blinding Attacks</span><br/>
-            <span class="pub-venue">HITBSecConf 2023, arXiv 2023.</span>
-          </li>
-          <li>
-            <span class="pub-title">Blasting Event‑Driven Cornucopia: WMI‑based User‑Space Attacks Blind SIEMs and EDRs</span><br/>
-            <span class="pub-venue">BlackHat USA 2022.</span>
-          </li>
-          <li>
-            <span class="pub-title">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</span><br/>
-            <span class="pub-venue">BlackHat Europe 2021.</span>
-          </li>
-          <li>
-            <span class="pub-title">Protected Process Light is not Protected: MemoryRanger Fills the Gap Again</span><br/>
-            <span class="pub-venue">IEEE S&amp;P Workshops (SADFE), 2021.</span>
-          </li>
-          <li>
-            <span class="pub-title">Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations</span><br/>
-            <span class="pub-venue">Journal of Digital Forensics, Security and Law, 2015.</span>
-          </li>
-        </ul>
-        <p style="margin-top:10px;">
-          A more complete list of talks and publications is available on my
-          <a href="https://sites.google.com/site/igorkorkin/home">research page</a>
-          and in the <a href="https://github.com/IgorKorkin/research">research repository</a>.
-        </p>
-      </section>
+    <section class="updates" id="updates">
+      <h2>Updates</h2>
+      <ul>
+        <li>
+          <span class="date">Apr 2026</span> Added the new
+          <a href="https://igorkorkin.github.io/monograph/">monograph website</a>
+          and local book-cover link.
+        </li>
+        <li>
+          <span class="date">Apr 2026</span> Updated the biography using the author note from the monograph
+          in English and Russian.
+        </li>
+        <li>
+          <span class="date">Apr 2026</span> Added a local
+          <a href="details.html">details page</a> with publications, talks, patents, and research links.
+        </li>
+        <li>
+          <span class="date">Apr 2026</span> Added selected talk links for HITBSecConf, Black Hat, LABScon,
+          IEEE S&amp;P Workshops, and MemoryRanger materials.
+        </li>
+      </ul>
+    </section>
+
+    <main>
+      <div>
+        <section id="news">
+          <h2>News</h2>
+          <ul>
+            <li>
+              <span class="date">2026</span> Published the monograph
+              <a href="https://igorkorkin.github.io/monograph/">Kernel Protection of Operating Systems Under Countermeasures</a>.
+            </li>
+            <li>
+              <span class="date">2023</span> Presented
+              <a href="https://conference.hitb.org/hitbsecconf2023hkt/session/commsec-alpchecker-detecting-spoofing-and-blinding-attacks/" target="_blank" rel="noopener noreferrer">ALPChecker: Detecting Spoofing and Blinding Attacks</a>
+              at HITBSecConf Phuket.
+            </li>
+            <li>
+              <span class="date">2022</span> Presented
+              <a href="https://www.binarly.io/events/blasting-event-driven-cornucopiawmi-based-user-space-attacks-blind-siems-and-edrs" target="_blank" rel="noopener noreferrer">Blasting Event-Driven Cornucopia</a>
+              at Black Hat USA, LABScon, and Ekoparty.
+            </li>
+            <li>
+              <span class="date">2021</span> Presented
+              <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs" target="_blank" rel="noopener noreferrer">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</a>
+              at Black Hat Europe.
+            </li>
+            <li>
+              <span class="date">2020</span> Presented
+              <em>Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</em>
+              at HITB Lockdown 002.
+            </li>
+            <li>
+              <span class="date">2018</span> Presented
+              <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668" target="_blank" rel="noopener noreferrer">Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces</a>
+              at Black Hat Europe.
+            </li>
+          </ul>
+        </section>
+
+        <section id="talks">
+          <h2>Selected Talks</h2>
+          <div class="paper">
+            <h3>ALPChecker: Detecting Spoofing and Blinding Attacks</h3>
+            <p class="venue">HITBSecConf Phuket, 2023</p>
+            <p>
+              <a href="https://conference.hitb.org/hitbsecconf2023hkt/session/commsec-alpchecker-detecting-spoofing-and-blinding-attacks/" target="_blank" rel="noopener noreferrer">session</a> /
+              <a href="https://conference.hitb.org/hitbsecconf2023hkt/materials/D1%20COMMSEC%20-%20ALPChecker%20%E2%80%93%20Detecting%20Spoofing%20and%20Blinding%20Attacks%20-%20Anastasiia%20Kropova%20%26%20Igor%20Korkin.pdf" target="_blank" rel="noopener noreferrer">slides</a> /
+              <a href="https://igorkorkin.blogspot.com/2023/12/alpchecker-detecting-spoofing-and.html" target="_blank" rel="noopener noreferrer">blog</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Blasting Event-Driven Cornucopia: WMI-based User-Space Attacks Blind SIEMs and EDRs</h3>
+            <p class="venue">Black Hat USA, 2022</p>
+            <p>
+              <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211" target="_blank" rel="noopener noreferrer">Black Hat</a> /
+              <a href="https://www.binarly.io/events/blasting-event-driven-cornucopiawmi-based-user-space-attacks-blind-siems-and-edrs" target="_blank" rel="noopener noreferrer">event</a> /
+              <a href="https://infocondb.org/con/black-hat/black-hat-usa-2022/blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs" target="_blank" rel="noopener noreferrer">archive</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Blasting Event Driven Cornucopia: WMI Edition</h3>
+            <p class="venue">LABScon, 2022</p>
+            <p>
+              <a href="https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/" target="_blank" rel="noopener noreferrer">replay</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Blinding Endpoint Security Solutions: WMI attack vectors</h3>
+            <p class="venue">Ekoparty, 2022</p>
+            <p>
+              <a href="https://www.youtube.com/watch?v=Q35snDTxb6w" target="_blank" rel="noopener noreferrer">video</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</h3>
+            <p class="venue">Black Hat Europe, 2021</p>
+            <p>
+              <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs" target="_blank" rel="noopener noreferrer">event</a> /
+              <a href="https://infocondb.org/con/black-hat/black-hat-europe-2021/veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors" target="_blank" rel="noopener noreferrer">archive</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Protected Process Light is not Protected: MemoryRanger Fills the Gap Again</h3>
+            <p class="venue">IEEE S&amp;P Workshops / Texas Cyber Summit, 2021</p>
+            <p>
+              <a href="https://doi.org/10.1109/SPW53761.2021.00050" target="_blank" rel="noopener noreferrer">doi</a> /
+              <a href="https://igorkorkin.blogspot.com/2021/10/protected-process-light-will-be.html" target="_blank" rel="noopener noreferrer">materials</a>
+            </p>
+          </div>
+
+          <div class="paper">
+            <h3>Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces</h3>
+            <p class="venue">Black Hat Europe, 2018</p>
+            <p>
+              <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668" target="_blank" rel="noopener noreferrer">blackhat</a> /
+              <a href="https://igorkorkin.blogspot.com/2018/12/divide-et-impera-memoryranger-runs.html" target="_blank" rel="noopener noreferrer">materials</a> /
+              <a href="https://github.com/IgorKorkin/MemoryRanger" target="_blank" rel="noopener noreferrer">code</a>
+            </p>
+          </div>
+        </section>
+
+        <section id="recorded-talks">
+          <h2>Recorded Talks</h2>
+          <ul>
+            <li>
+              <span class="date">2023</span>
+              <a href="https://www.youtube.com/watch?v=DV0dls206zc" target="_blank" rel="noopener noreferrer">ALPChecker - Detecting Spoofing and Blinding Attacks</a>,
+              HITBSecConf Phuket.
+            </li>
+            <li>
+              <span class="date">2022</span>
+              <a href="https://www.binarly.io/events/blasting-event-driven-cornucopiawmi-based-user-space-attacks-blind-siems-and-edrs" target="_blank" rel="noopener noreferrer">Blasting Event-Driven Cornucopia: WMI-based User-Space Attacks Blind SIEMs and EDRs</a>,
+              Black Hat USA.
+            </li>
+            <li>
+              <span class="date">2022</span>
+              <a href="https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/" target="_blank" rel="noopener noreferrer">Blasting Event Driven Cornucopia: WMI Edition</a>,
+              LABScon replay.
+            </li>
+            <li>
+              <span class="date">2022</span>
+              <a href="https://www.youtube.com/watch?v=Q35snDTxb6w" target="_blank" rel="noopener noreferrer">Blinding Endpoint Security Solutions: WMI attack vectors</a>,
+              Ekoparty.
+            </li>
+            <li>
+              <span class="date">2022</span>
+              <a href="https://youtu.be/dF7TP1V6wTM" target="_blank" rel="noopener noreferrer">Microsoft Defender Will Be Defended - MemoryRanger Prevents Blinding Windows AV</a>,
+              ROOTCON 16.
+            </li>
+            <li>
+              <span class="date">2022</span>
+              <a href="https://youtu.be/__5KbGy2cHk" target="_blank" rel="noopener noreferrer">Human-Controlled Fuzzing With AFL</a>,
+              ROOTCON 16.
+            </li>
+            <li>
+              <span class="date">2021</span>
+              <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs" target="_blank" rel="noopener noreferrer">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</a>,
+              Black Hat Europe.
+            </li>
+            <li>
+              <span class="date">2021</span>
+              <a href="https://www.youtube.com/watch?v=oY28U6U2moo" target="_blank" rel="noopener noreferrer">Protected Process Light will be Protected - MemoryRanger Fills the Gap Again</a>,
+              Texas Cyber Summit.
+            </li>
+            <li>
+              <span class="date">2021</span>
+              <a href="https://www.youtube.com/watch?v=R4yWYtTqH4I" target="_blank" rel="noopener noreferrer">Your Linux Passwords Are in Danger: MimiDove Meets the Challenge</a>,
+              Texas Cyber Summit lightning talk.
+            </li>
+            <li>
+              <span class="date">2020</span>
+              <a href="https://conference.hitb.org/hitb-lockdown002/sessions/kernel-hijacking-is-not-an-option-memoryranger-comes-to-rescue-again/" target="_blank" rel="noopener noreferrer">Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</a>,
+              HITB Lockdown 002.
+            </li>
+            <li>
+              <span class="date">2018</span>
+              <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668" target="_blank" rel="noopener noreferrer">Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces</a>,
+              Black Hat Europe.
+            </li>
+          </ul>
+        </section>
+
+        <section id="collaboration">
+          <h2>International Project Collaboration</h2>
+          <ul>
+            <li><span class="date">2016-2017</span> Satoshi Tanda, Japan / Canada: collaboration on Windows hypervisor research and PoC development.
+              <ul>
+                <li>
+                  REcon 2016:
+                  <a href="https://recon.cx/2016/speakers/satoshi_tanda.html" target="_blank" rel="noopener noreferrer">Monitoring &amp; Controlling Kernel-Mode Events by HyperPlatform</a>.
+                </li>
+                <li>
+                  ADFSL 2017:
+                  <a href="https://commons.erau.edu/adfsl/2017/papers/5/" target="_blank" rel="noopener noreferrer">Detect Kernel-Mode Rootkits via Real-Time Logging &amp; Controlling Memory Access</a>.
+                </li>
+                <li>
+                  Publication with S. Tanda in the ADFSL Conference on Digital Forensics, Security and Law proceedings.
+                </li>
+              </ul>
+            </li>
+            <li><span class="date">2020-2022</span> Binarly, USA: architecture analysis of modern AV/EDR weaknesses and research PoC development.
+              <ul>
+                <li>
+                  Black Hat Europe 2021:
+                  <a href="https://www.blackhat.com/eu-21/briefings/schedule/#veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors-24842" target="_blank" rel="noopener noreferrer">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</a>.
+                </li>
+                <li>
+                  Black Hat USA 2022:
+                  <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211" target="_blank" rel="noopener noreferrer">Blasting Event-Driven Cornucopia</a>.
+                </li>
+                <li>
+                  <a href="https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/" target="_blank" rel="noopener noreferrer">LABScon 2022</a>
+                  and
+                  <a href="https://www.youtube.com/watch?v=Q35snDTxb6w" target="_blank" rel="noopener noreferrer">Ekoparty 2022</a>:
+                  WMI attack-vector talks and public research materials.
+                </li>
+              </ul>
+            </li>
+            <li><span class="date">2019-2023</span> Huawei:
+              <ul>
+                <li>Patent collaboration with Hu Kekai:
+                  <a href="https://patents.google.com/patent/US20230289465A1/en" target="_blank" rel="noopener noreferrer">US20230289465A1</a>,
+                  kernel memory-protection technology developed in the context of the Linux Sandbox project.</li>
+                <li>Chong-Ming Lab collaboration with Ma Chun Fei, Hu Gang, and Huang Mengyu: data storage protection technologies; Huawei Future Star Award, 2023.</li>
+                <li>VIKA / Cloud Service Competence Center collaboration with Liu PinPing (Katelyn) and Evgeny Smirnov: Windows Unified Crypto Service components and protection algorithms for Windows applications; Windows Security Team Excellent Team Award, 2022.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section id="conference-record">
+          <h2>Conference Record</h2>
+          <table class="conference-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Conferences and venues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025</td>
+                <td>MEPhI CIB / КИБ Moscow (Russia).</td>
+              </tr>
+              <tr>
+                <td>2023</td>
+                <td>HITBSecConf Phuket (Thailand).</td>
+              </tr>
+              <tr>
+                <td>2022</td>
+                <td>Black Hat USA (USA), LABScon (USA), Ekoparty (Argentina), ADFSL (USA), ROOTCON (Philippines).</td>
+              </tr>
+              <tr>
+                <td>2021</td>
+                <td>Black Hat Europe (UK), IEEE S&amp;P Workshops / SADFE (USA), Texas Cyber Summit (USA).</td>
+              </tr>
+              <tr>
+                <td>2020</td>
+                <td>HITB Lockdown 002 (Singapore / online), Journal of Digital Forensics, Security and Law (USA).</td>
+              </tr>
+              <tr>
+                <td>2018-2019</td>
+                <td>Black Hat Europe (UK), ADFSL (USA), Journal of Digital Forensics, Security and Law (USA).</td>
+              </tr>
+              <tr>
+                <td>2016-2017</td>
+                <td>REcon Montreal (Canada), ADFSL (USA).</td>
+              </tr>
+              <tr>
+                <td>2014-2015</td>
+                <td>ADFSL (USA), Journal of Digital Forensics, Security and Law (USA).</td>
+              </tr>
+              <tr>
+                <td>2012</td>
+                <td>Methods and Technical Means of Information Security / MTSOBI, Saint Petersburg (Russia).</td>
+              </tr>
+              <tr>
+                <td>2011</td>
+                <td>Infoforum (Russia), Youth and Science / MEPhI (Russia), MTSOBI, Saint Petersburg (Russia), Telecommunications and New Information Technologies in Education / MEPhI (Russia), RusCrypto (Russia), ISP RAS seminar (Russia), Bauman MSTU seminar (Russia).</td>
+              </tr>
+              <tr>
+                <td>2010</td>
+                <td>Infoforum (Russia), MTSOBI, Saint Petersburg (Russia), Youth and Science / MEPhI (Russia).</td>
+              </tr>
+              <tr>
+                <td>2009</td>
+                <td>Infoforum / Problems of Information Security in Higher Education (Russia).</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="advising">
+          <h2>Advising and Service</h2>
+          <h3>Academic supervision</h3>
+          <p>
+            Invited academic supervisor at MEPhI since 2013, advising undergraduate and graduate research in
+            information security. More than 30 graduates have defended diplomas and joined security teams in
+            Russian and International companies.
+          </p>
+          <ul>
+            <li>State Examination Board, Moscow Engineering Physics Institute.</li>
+            <li>MEPhI student research topics include ETW-based malware detection, Windows memory forensics, rootkit detection, RASP for LSASS, ALPChecker, Defender security analysis, and sandboxing attacks.</li>
+          </ul>
+
+          <h3>Journal Peer Review</h3>
+          <ul>
+            <li>Reviewer for Journal in Computer Virology: 9 reviews.</li>
+            <li>Reviewer for Journal of Computer Virology and Hacking Techniques: 7 reviews.</li>
+            <li>Reviewer for Journal of Information Security and Applications: 2 reviews, due soon.</li>
+          </ul>
+        </section>
+      </div>
 
     </main>
+
+    <section class="closing">
+      <h2>More material</h2>
+      <div class="closing-links">
+        <a href="details.html">Details</a>
+        <a href="https://igorkorkin.github.io/monograph/">Monograph</a>
+        <a href="cv/resume.igor.korkin.pdf">CV PDF</a>
+        <a href="https://t.me/IgorKorkin">Contact</a>
+      </div>
+    </section>
+
+    <footer>
+      Last updated: April 2026.
+    </footer>
   </div>
+
+  <script>
+    const langButtons = document.querySelectorAll(".lang-btn");
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        document.body.dataset.lang = button.dataset.lang;
+        langButtons.forEach((item) => {
+          item.classList.toggle("active", item === button);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
