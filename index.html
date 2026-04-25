@@ -113,6 +113,43 @@
       white-space: nowrap;
     }
 
+    .links-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 20px;
+      align-items: baseline;
+    }
+
+    .links-grid-label {
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .links-grid-values {
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .links-grid-values a {
+      white-space: nowrap;
+    }
+
+    .nav-section {
+      text-align: center;
+      margin: 14px 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-section a {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
     .links .nav-monograph {
       color: #a32020;
       font-weight: 700;
@@ -587,41 +624,46 @@
       <div>
         <h1>Igor Korkin, PhD</h1>
         <p class="subtitle">Lead Security Researcher &amp; Developer | Black Hat Speaker | Author of Monograph</p>
-        <p class="links">
-          Key:
-          <a class="nav-monograph" href="https://igorkorkin.github.io/monograph/">Monograph</a> /
-          <a href="details.html">Details</a> /
-          <a href="cv/resume.igor.korkin.pdf">CV</a> /
-          <a href="https://igorkorkin.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a>
+        <p class="nav-section">
+          <a class="nav-monograph" href="https://igorkorkin.github.io/monograph/">Monograph</a> —
+          <a href="cv/resume.igor.korkin.pdf">CV</a> —
+          <a href="details.html">Achievement</a> —
+          <a href="https://igorkorkin.blogspot.com/" target="_blank" rel="noopener noreferrer">My blog</a>
         </p>
-        <p class="links profile-links">
-          Contact:
-          <a href="mailto:igor.korkin@gmail.com">E-mail</a> /
-          <a href="https://t.me/IgorKorkin" target="_blank" rel="noopener noreferrer">Telegram</a>
-        </p>
-        <p class="links profile-links">
-          Professional:
-          <a href="https://www.linkedin.com/in/korkinigor/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
-          <a href="https://github.com/IgorKorkin" target="_blank" rel="noopener noreferrer">GitHub</a> /
-          <a href="https://patents.google.com/patent/US20230289465A1/en" target="_blank" rel="noopener noreferrer">Google Patents</a> /
-          <a href="https://ieeexplore.ieee.org/author/37088908930" target="_blank" rel="noopener noreferrer">IEEE Xplore</a>
-        </p>
-        <p class="links profile-links">
-          Academic:
-          <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
-          <a href="https://orcid.org/0000-0001-7640-2792" target="_blank" rel="noopener noreferrer">ORCID</a> /
-          <a href="https://arxiv.org/a/korkin_i_1.html" target="_blank" rel="noopener noreferrer">arXiv</a> /
-          <a href="https://dblp.uni-trier.de/pers/hd/k/Korkin:Igor" target="_blank" rel="noopener noreferrer">DBLP</a> /
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57219459633" target="_blank" rel="noopener noreferrer">Scopus</a> /
-          <a href="https://www.webofscience.com/wos/author/record/294131" target="_blank" rel="noopener noreferrer">Web of Science</a> /
-          <a href="https://www.webofscience.com/wos/author/record/N-2544-2013" target="_blank" rel="noopener noreferrer">ResearcherID</a> /
-          <a href="https://www.researchgate.net/profile/Igor-Korkin-2" target="_blank" rel="noopener noreferrer">ResearchGate</a> /
-          <a href="https://openreview.net/profile?id=~Igor_Korkin1" target="_blank" rel="noopener noreferrer">OpenReview</a> /
-          <a href="https://www.semanticscholar.org/author/3114387" target="_blank" rel="noopener noreferrer">Semantic Scholar</a> /
-          <a href="https://www.elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">eLibrary / RSCI</a> /
-          <a href="https://www.dslib.net/author/igor.korkin.html" target="_blank" rel="noopener noreferrer">DsLib.net</a> /
-          <a href="https://mephi.academia.edu/IgorKorkin" target="_blank" rel="noopener noreferrer">Academia.edu</a>
-        </p>
+
+        <div class="links-grid">
+          <div class="links-grid-label">Contact:</div>
+          <p class="links-grid-values">
+            <a href="mailto:igor.korkin@gmail.com">E-mail</a> /
+            <a href="https://t.me/IgorKorkin" target="_blank" rel="noopener noreferrer">Telegram</a>
+          </p>
+
+          <div class="links-grid-label">Professional:</div>
+          <p class="links-grid-values">
+            <a href="https://www.linkedin.com/in/korkinigor/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
+            <a href="https://github.com/IgorKorkin" target="_blank" rel="noopener noreferrer">GitHub</a> /
+            <a href="https://patents.google.com/patent/US20230289465A1/en" target="_blank" rel="noopener noreferrer">Google Patents</a> /
+            <a href="https://ieeexplore.ieee.org/author/37088908930" target="_blank" rel="noopener noreferrer">IEEE Xplore</a> /
+            <a href="https://elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">РИНЦ</a>
+          </p>
+
+          <div class="links-grid-label">Academic:</div>
+          <p class="links-grid-values">
+            <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
+            <a href="https://orcid.org/0000-0001-7640-2792" target="_blank" rel="noopener noreferrer">ORCID</a> /
+            <a href="https://arxiv.org/a/korkin_i_1.html" target="_blank" rel="noopener noreferrer">arXiv</a> /
+            <a href="https://dblp.uni-trier.de/pers/hd/k/Korkin:Igor" target="_blank" rel="noopener noreferrer">DBLP</a> /
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=57219459633" target="_blank" rel="noopener noreferrer">Scopus</a> /
+            <a href="https://www.webofscience.com/wos/author/record/294131" target="_blank" rel="noopener noreferrer">Web of Science</a> /
+            <a href="https://www.webofscience.com/wos/author/record/N-2544-2013" target="_blank" rel="noopener noreferrer">ResearcherID</a> /
+            <a href="https://www.researchgate.net/profile/Igor-Korkin-2" target="_blank" rel="noopener noreferrer">ResearchGate</a> /
+            <a href="https://openreview.net/profile?id=~Igor_Korkin1" target="_blank" rel="noopener noreferrer">OpenReview</a> /
+            <a href="https://www.semanticscholar.org/author/3114387" target="_blank" rel="noopener noreferrer">Semantic Scholar</a> /
+            <a href="https://www.elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">eLibrary / RSCI</a> /
+            <a href="https://www.dslib.net/author/igor.korkin.html" target="_blank" rel="noopener noreferrer">DsLib.net</a> /
+            <a href="https://mephi.academia.edu/IgorKorkin" target="_blank" rel="noopener noreferrer">Academia.edu</a>
+          </p>
+        </div>
       </div>
       <img class="photo" src="igor.korkin.photo.jpg" alt="Igor Korkin" />
     </header>
