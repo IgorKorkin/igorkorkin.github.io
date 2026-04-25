@@ -95,6 +95,54 @@
       margin-top: 16px;
       font-size: 0.92rem;
     }
+    .monograph-card {
+      display: block;
+      margin: 18px auto 4px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      color: var(--text-main);
+      text-align: left;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    }
+    .monograph-card:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+    .monograph-card img {
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      margin: 0 auto 10px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      background: #f3f4f6;
+    }
+    .monograph-card .eyebrow {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.74rem;
+      line-height: 1.2;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .monograph-card strong {
+      display: block;
+      font-size: 0.96rem;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+    .monograph-card .cta {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.86rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
     .sidebar-section h3 {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -183,6 +231,13 @@
       <div class="subtitle">
         OS security researcher
       </div>
+
+      <a class="monograph-card" href="https://igorkorkin.github.io/monograph/" aria-label="Open monograph website">
+        <img src="monograph-cover.jpg" alt="Kernel Protection of Operating Systems Under Countermeasures book cover">
+        <span class="eyebrow">New monograph</span>
+        <strong>Kernel Protection of Operating Systems Under Countermeasures</strong>
+        <span class="cta">Open monograph site</span>
+      </a>
 
       <div class="sidebar-section">
         <h3>Affiliation</h3>
