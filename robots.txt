@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://igorkorkin.github.io/sitemap.xml
+Sitemap: https://igorkorkin.github.io/monograph/sitemap.xml
