@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Защита ядра операционных систем в условиях противодействия — монография Игоря Коркина</title>
+  <meta
+    name="description"
+    content="Монография Игоря Юрьевича Коркина о защите ядра Windows от низкоуровневых угроз, скрытых гипервизоров, атак драйверов и противодействующих нарушителей. Готовые варианты цитирования на русском и английском языках."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://igorkorkin.github.io/monograph/" />
+  <meta property="og:title" content="Защита ядра операционных систем в условиях противодействия" />
+  <meta property="og:description" content="Монография Игоря Коркина о защите ядра Windows, гипервизорах, EPT, MemoryRanger и низкоуровневых угрозах." />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://igorkorkin.github.io/monograph/" />
+  <meta property="og:image" content="https://igorkorkin.github.io/monograph-cover.jpg" />
+
+  <style>
+    :root {
+      --text: #1f2933;
+      --muted: #5b6673;
+      --line: #d8dee7;
+      --link: #1756a9;
+      --visited: #5c3b94;
+      --bg-soft: #f6f8fb;
+      --accent: #a32020;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 34px 18px 56px;
+      color: var(--text);
+      background: var(--bg-soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: var(--visited);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    header,
+    section,
+    footer {
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 28px;
+      align-items: start;
+      padding: 24px;
+    }
+
+    .nav {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      white-space: nowrap;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.2rem;
+      line-height: 1.12;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--line);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.32rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .lead {
+      color: #2c3540;
+      font-size: 1.03rem;
+    }
+
+    .cover {
+      width: 100%;
+      max-width: 220px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .actions a,
+    .button {
+      display: inline-block;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--link);
+      font: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .actions a.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    main {
+      margin-top: 22px;
+    }
+
+    section {
+      margin-bottom: 22px;
+      padding: 20px 22px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 22px;
+      margin: 0;
+    }
+
+    .meta-grid div {
+      min-width: 0;
+    }
+
+    .meta-grid dt {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .meta-grid dd {
+      margin: 0;
+    }
+
+    .citation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .citation-card {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .citation-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .citation-head h3 {
+      margin: 0;
+    }
+
+    .copy-status {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      resize: vertical;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .source-links a {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 0 0 8px;
+    }
+
+    footer {
+      margin-top: 22px;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 22px 14px 44px;
+      }
+
+      header,
+      .citation-grid,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 1.72rem;
+      }
+
+      .cover {
+        max-width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <p class="nav"><a href="/">Igor Korkin</a> / Monograph</p>
+        <h1>Защита ядра операционных систем в условиях противодействия</h1>
+        <p class="lead">
+          Монография Игоря Юрьевича Коркина о защите ядра Windows от низкоуровневых угроз:
+          скрытых гипервизоров, атак драйверов, гипервизорных архитектур защиты, мониторинга памяти
+          и противодействия адаптирующимся нарушителям.
+        </p>
+        <p>
+          Книга рассматривает архитектуру ядра Windows, встроенные механизмы защиты ОС, руткит-техники,
+          методы обнаружения скрытых гипервизоров, VT-x, EPT, MemoryRanger, MemoryMonRWX и AllMemPro.
+        </p>
+        <p>
+          Автор: Игорь Юрьевич Коркин, кандидат технических наук, исследователь безопасности операционных систем,
+          гипервизоров и низкоуровневых киберугроз.
+        </p>
+        <div class="actions" aria-label="Book links">
+          <a class="primary" href="https://elibrary.ru/item.asp?id=91614175" target="_blank" rel="noopener noreferrer">eLIBRARY</a>
+          <a href="https://doi.org/10.12737/2228735" target="_blank" rel="noopener noreferrer">DOI</a>
+          <a href="https://znanium.ru/read?id=481477" target="_blank" rel="noopener noreferrer">Читать на ZNANIUM</a>
+          <a href="https://infra-m.ru/catalog/informatika_vychislitelnaya_tekhnika/zashchita_yadra_operatsionnykh_sistem_v_usloviyakh_protivodeystviya/" target="_blank" rel="noopener noreferrer">ИНФРА-М</a>
+        </div>
+      </div>
+      <img class="cover" src="/monograph-cover.jpg" alt="Обложка монографии Защита ядра операционных систем в условиях противодействия" />
+    </header>
+
+    <main>
+      <section id="citation">
+        <h2>Как цитировать</h2>
+        <p>
+          Готовые варианты библиографической ссылки для статей, обзоров, экспертных заключений и научных материалов.
+        </p>
+        <div class="citation-grid">
+          <article class="citation-card">
+            <div class="citation-head">
+              <h3>На русском</h3>
+              <button class="button" type="button" data-copy-target="citation-ru">Copy</button>
+            </div>
+            <textarea id="citation-ru" readonly>Коркин И.Ю. ЗАЩИТА ЯДРА ОПЕРАЦИОННЫХ СИСТЕМ В УСЛОВИЯХ ПРОТИВОДЕЙСТВИЯ : монография. Москва: НИЦ ИНФРА-М, 2026. 488 с. DOI: 10.12737/2228735. EDN: MMFTWR. ISBN: 978-5-16-021527-3.</textarea>
+            <p class="copy-status" aria-live="polite"></p>
+          </article>
+
+          <article class="citation-card">
+            <div class="citation-head">
+              <h3>In English</h3>
+              <button class="button" type="button" data-copy-target="citation-en">Copy</button>
+            </div>
+            <textarea id="citation-en" readonly>Korkin I.Yu. PROTECTION OF THE CORE OF OPERATING SYSTEMS IN THE FACE OF COUNTERACTION. Monograph. Moscow: INFRA-M, 2026. 488 p. DOI: 10.12737/2228735. EDN: MMFTWR. ISBN: 978-5-16-021527-3.</textarea>
+            <p class="copy-status" aria-live="polite"></p>
+          </article>
+        </div>
+        <div class="source-links" aria-label="Citation sources">
+          <a href="https://elibrary.ru/item.asp?id=91614175" target="_blank" rel="noopener noreferrer">eLIBRARY ID: 91614175</a>
+          <a href="https://www.elibrary.ru/item.asp?id=91614175" target="_blank" rel="noopener noreferrer">EDN: MMFTWR</a>
+          <a href="https://doi.org/10.12737/2228735" target="_blank" rel="noopener noreferrer">DOI: 10.12737/2228735</a>
+        </div>
+      </section>
+
+      <section id="metadata">
+        <h2>Библиографические данные</h2>
+        <dl class="meta-grid">
+          <div>
+            <dt>Тип</dt>
+            <dd>Монография</dd>
+          </div>
+          <div>
+            <dt>Год издания</dt>
+            <dd>2026</dd>
+          </div>
+          <div>
+            <dt>Место издания</dt>
+            <dd>Москва</dd>
+          </div>
+          <div>
+            <dt>Издательство</dt>
+            <dd>НИЦ ИНФРА-М</dd>
+          </div>
+          <div>
+            <dt>Объём</dt>
+            <dd>488 страниц</dd>
+          </div>
+          <div>
+            <dt>ISBN</dt>
+            <dd>978-5-16-021527-3</dd>
+          </div>
+          <div>
+            <dt>eLIBRARY ID</dt>
+            <dd>91614175</dd>
+          </div>
+          <div>
+            <dt>EDN</dt>
+            <dd>MMFTWR</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="summary">
+        <h2>О книге</h2>
+        <p>
+          Монография посвящена решению одной из актуальных проблем информационной безопасности — защите ядра
+          Windows от сложных низкоуровневых угроз. Исследование выполнено в двух взаимосвязанных направлениях:
+          защите памяти ядра от манипуляций со стороны драйверов и обнаружении скрытых гипервизоров, использующих
+          технологию аппаратной виртуализации.
+        </p>
+        <p>
+          В ответ на эти вызовы предложены два взаимодополняющих подхода. Первый — гипервизорная защита памяти
+          ядра, воплощённая в решениях MemoryMonRWX, AllMemPro и MemoryRanger. Второй подход направлен на выявление
+          скрытых гипервизоров с помощью статистического анализа характеристик длительности выполнения инструкций.
+        </p>
+        <p>
+          Работа основана на многолетних исследованиях автора, отражённых в научных публикациях, патенте и докладах
+          на международных конференциях.
+        </p>
+      </section>
+
+      <section id="stores">
+        <h2>Где доступна</h2>
+        <p>Печатная и электронная версии книги доступны на страницах издателя и книжных платформ.</p>
+        <div class="actions">
+          <a href="https://znanium.ru/read?id=481477" target="_blank" rel="noopener noreferrer">ZNANIUM</a>
+          <a href="https://infra-m.ru/catalog/informatika_vychislitelnaya_tekhnika/zashchita_yadra_operatsionnykh_sistem_v_usloviyakh_protivodeystviya/" target="_blank" rel="noopener noreferrer">ИНФРА-М</a>
+          <a href="https://www.ozon.ru/product/zashchita-yadra-operatsionnyh-sistem-v-usloviyah-protivodeystviya-4030175118/" target="_blank" rel="noopener noreferrer">Ozon</a>
+          <a href="https://www.wildberries.ru/catalog/980328161/detail.aspx?targetUrl=GP" target="_blank" rel="noopener noreferrer">Wildberries</a>
+          <a href="https://market.yandex.ru/card/zashchita-yadra-operatsionnykh-sistem-v-usloviyakh-protivodeystviya-monografiyakorkin-i-yu-m-nits-infra-m2026-488-s16pereplet-7bts/5666301666" target="_blank" rel="noopener noreferrer">Yandex.Маркет</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Last updated: July 2026.
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        const status = button.closest(".citation-card").querySelector(".copy-status");
+        try {
+          await navigator.clipboard.writeText(target.value);
+          status.textContent = "Copied.";
+        } catch (error) {
+          target.focus();
+          target.select();
+          status.textContent = "Select and copy manually.";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
