@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Igor Korkin — Research Entities</title>
-  <meta name="description" content="Structured research entities for Igor Korkin: MemoryRanger, DesktopRanger, and selected scholarly publications." />
+  <title>Igor Korkin — Research Software</title>
+  <meta name="description" content="Structured research entities for Igor Korkin, MemoryRanger, and DesktopRanger." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://igorkorkin.github.io/research-entities.html" />
 
@@ -60,30 +60,6 @@
           "privacy protection",
           "user-mode security"
         ]
-      },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.21681/2311-3456-2026-4-64-70",
-        "headline": "Системный анализ техник перехвата клавиатурного ввода и методов защиты пользовательского ввода в ОС Windows",
-        "name": "Системный анализ техник перехвата клавиатурного ввода и методов защиты пользовательского ввода в ОС Windows",
-        "author": { "@id": "https://igorkorkin.github.io/#person" },
-        "creator": { "@id": "https://igorkorkin.github.io/#person" },
-        "datePublished": "2026",
-        "inLanguage": "ru",
-        "isPartOf": {
-          "@type": "Periodical",
-          "name": "Вопросы кибербезопасности",
-          "issn": "2311-3456"
-        },
-        "identifier": "https://doi.org/10.21681/2311-3456-2026-4-64-70",
-        "sameAs": "https://doi.org/10.21681/2311-3456-2026-4-64-70",
-        "keywords": [
-          "keylogging",
-          "Windows security",
-          "user input protection",
-          "keyboard input interception",
-          "operating system security"
-        ]
       }
     ]
   }
@@ -94,28 +70,28 @@
     h1, h2 { font-family: Georgia, "Times New Roman", serif; }
     section { margin: 28px 0; }
     a { color: #1756a9; }
+    .keywords { color: #5b6673; }
   </style>
 </head>
 <body>
-  <h1>Igor Korkin — Research Entities</h1>
-  <p>This page exposes machine-readable structured data for selected research software and scholarly work by Igor Korkin.</p>
+  <h1>Igor Korkin — Research Software</h1>
+  <p>This page describes selected research software by Igor Korkin and exposes matching machine-readable structured data.</p>
 
   <section>
     <h2>MemoryRanger</h2>
-    <p>Hypervisor-based Windows kernel isolation research project.</p>
+    <p>MemoryRanger protects kernel data and code by running drivers and hosting data in isolated kernel enclaves using Intel VT-x and EPT features.</p>
+    <p><strong>Programming language:</strong> C++</p>
+    <p class="keywords"><strong>Topics:</strong> Windows kernel security, hypervisor, Intel VT-x, EPT, kernel isolation, operating system security.</p>
     <p><a href="https://github.com/IgorKorkin/MemoryRanger">GitHub repository</a></p>
   </section>
 
   <section>
     <h2>DesktopRanger</h2>
-    <p>Windows Desktop isolation hardening for sensitive applications.</p>
+    <p>DesktopRanger hardens Windows Desktop isolation for sensitive applications.</p>
+    <p><strong>Programming language:</strong> C++</p>
+    <p><strong>License:</strong> <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
+    <p class="keywords"><strong>Topics:</strong> Windows security, Windows desktop isolation, access control, sandboxing, privacy protection, user-mode security.</p>
     <p><a href="https://github.com/IgorKorkin/DesktopRanger">GitHub repository</a></p>
-  </section>
-
-  <section>
-    <h2>Selected scholarly article</h2>
-    <p>Системный анализ техник перехвата клавиатурного ввода и методов защиты пользовательского ввода в ОС Windows.</p>
-    <p><a href="https://doi.org/10.21681/2311-3456-2026-4-64-70">DOI: 10.21681/2311-3456-2026-4-64-70</a></p>
   </section>
 
   <p><a href="https://igorkorkin.github.io/">Back to Igor Korkin's homepage</a></p>
