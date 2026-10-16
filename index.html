@@ -839,7 +839,10 @@
 
     /* Google Sites-inspired scholarly bibliography: title, then stacked citation groups. */
     .full-bibliography { background:#fff; border:0; padding:12px 0; }
-    .bibliography-heading { margin:0 0 14px; color:var(--text); }
+    .bibliography-heading { display:list-item; margin:0; padding:12px 4px; color:var(--link); font-weight:700; cursor:pointer; }
+    .bibliography-heading:hover { text-decoration:underline; }
+    .bibliography-heading:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
+    .full-bibliography[open] > .bibliography-heading { margin-bottom:14px; }
     .full-bibliography .pub-list { margin:18px 0 0; padding-left:30px; list-style:decimal; }
     .full-bibliography .bibliography-entry { margin:0 0 24px; padding:0 0 19px 0; border-bottom:1px solid var(--line); }
     .record-title { display:block; font-weight:700; margin-bottom:7px; line-height:1.5; }
@@ -1144,8 +1147,8 @@
             </li>
           </ol>
 
-          <div class="full-bibliography" id="bibliography">
-            <h3 class="bibliography-heading">Historical bibliography (59 entries, 2009–2025)</h3>
+          <details class="full-bibliography" id="bibliography">
+            <summary class="bibliography-heading">Historical bibliography (59 entries, 2009–2025)</summary>
             <p class="bibliography-note">Original bibliographic descriptions are preserved below, arranged by year (newest first). APA 7 is included for records where it has been verified. All text is visible and searchable with Ctrl+F.</p>
             <p class="bibliography-note"><strong>Early publication (non-security, 2005):</strong><br />
               Korkin I. Y., Prokoptsev P. I., Pavlishin P. P., Semenkova E. A. Measuring the sharp surface of cutting tools (Cutter profilometer) // Tractors and Agricultural Machinery. — 2005. — № 5. — P. 35–36. ISSN 0235-8573.
@@ -1624,7 +1627,7 @@
                 </ul>
               </li>
             </ol>
-          </div>
+          </details>
 
           <p class="publication-footer">
             <a href="#bibliography">Complete bibliography ↓</a> ·
