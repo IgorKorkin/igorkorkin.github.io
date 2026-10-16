@@ -729,19 +729,26 @@
     /* One-page academic layout */
     html { scroll-behavior: smooth; scroll-padding-top: 24px; }
     .page { max-width: 1180px; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 0 28px; align-items: start; }
-    .site-sidebar { grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 24px; padding: 18px 12px; border: 1px solid var(--line); background: #fff; max-height: calc(100vh - 48px); overflow-y: auto; }
+    .site-sidebar { grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 24px; padding: 20px 12px; border: 1px solid #111827; background: #111827; color: #fff; max-height: calc(100vh - 48px); overflow-y: auto; }
     .site-sidebar nav { display: flex; flex-direction: column; gap: 3px; }
-    .site-sidebar a { display: block; padding: 7px 9px; border-radius: 4px; color: var(--text); font-size: .94rem; }
-    .site-sidebar a:hover, .site-sidebar a:focus-visible { background: var(--bg-soft); color: var(--link); text-decoration: none; }
-    .sidebar-title { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: 1.12rem; font-weight: 700; }
+    .site-sidebar a, .site-sidebar a:visited { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 2px; color: #e5e7eb; font-size: .94rem; text-decoration: none; transition: background-color .15s ease, color .15s ease; }
+    .site-sidebar a:hover, .site-sidebar a:focus-visible { background: #374151; color: #fff; text-decoration: none; }
+    .site-sidebar a:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+    .site-sidebar a[aria-current="location"] { border-left-color: #fff; color: #fff; background: #374151; font-weight: 700; }
+    .sidebar-title { margin: 0 0 5px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 1.16rem; font-weight: 700; }
+    .sidebar-hint { margin: 0 0 15px; color: #9ca3af; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .sidebar-external { margin-top: 8px; padding-top: 8px; border-top: 1px solid #4b5563; }
+    .site-sidebar .sidebar-external a { color: #d1d5db; }
     .page > :not(.site-sidebar) { grid-column: 2; min-width: 0; }
     header .nav-section { display: none; }
     @media (max-width: 850px) {
       .page { display: block; }
       .site-sidebar { position: sticky; top: 0; z-index: 100; padding: 8px 10px; margin-bottom: 16px; max-height: none; overflow-y: visible; }
-      .sidebar-title { display: none; }
+      .sidebar-title, .sidebar-hint { display: none; }
       .site-sidebar nav { flex-direction: row; overflow-x: auto; white-space: nowrap; gap: 4px; }
-      .site-sidebar a { padding: 8px 10px; }
+      .site-sidebar a, .site-sidebar a:visited { padding: 8px 10px; border-left: 0; border-bottom: 3px solid transparent; }
+      .site-sidebar a[aria-current="location"] { border-left: 0; border-bottom-color: #fff; }
+      .sidebar-external { margin: 0; padding: 0; border: 0; }
       html { scroll-padding-top: 85px; }
     }
 
@@ -826,6 +833,7 @@
   <div class="page">
     <aside class="site-sidebar" aria-label="Site navigation">
       <p class="sidebar-title">Igor Korkin</p>
+      <p class="sidebar-hint">On this page ↓</p>
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -840,7 +848,7 @@
         <a href="#conference-record">Conferences</a>
         <a href="#advising">Academic Service</a>
         <a href="#contact">Contact</a>
-        <a href="cv/resume.igor.korkin.pdf">CV ↗</a>
+        <div class="sidebar-external"><a href="cv/resume.igor.korkin.pdf">CV ↗</a></div>
       </nav>
     </aside>
     <header id="home">
@@ -1609,6 +1617,35 @@
         });
       });
     });
+    // Highlight the section currently in view.
+    const sectionLinks = [...document.querySelectorAll('.site-sidebar a[href^="#"]')];
+    const sectionTargets = sectionLinks.map(link => ({
+      link,
+      target: document.getElementById(link.getAttribute("href").slice(1))
+    })).filter(item => item.target);
+
+    let sidebarTicking = false;
+    function updateSidebarLocation() {
+      const threshold = window.innerWidth <= 850 ? 105 : 125;
+      let current = sectionTargets[0];
+      for (const entry of sectionTargets) {
+        if (entry.target.getBoundingClientRect().top <= threshold) current = entry;
+      }
+      for (const entry of sectionTargets) {
+        if (entry === current) entry.link.setAttribute("aria-current", "location");
+        else entry.link.removeAttribute("aria-current");
+      }
+      sidebarTicking = false;
+    }
+    window.addEventListener("scroll", () => {
+      if (!sidebarTicking) {
+        sidebarTicking = true;
+        window.requestAnimationFrame(updateSidebarLocation);
+      }
+    }, { passive: true });
+    window.addEventListener("resize", updateSidebarLocation);
+    window.addEventListener("hashchange", updateSidebarLocation);
+    updateSidebarLocation();
   </script>
 </body>
 </html>
