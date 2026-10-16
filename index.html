@@ -770,6 +770,31 @@
     .news-archive { margin-top: 14px; font-size: .94rem; color: var(--muted); }
     .talks-intro { color: var(--muted); }
     .talks-archive-heading { margin: 22px 0 16px; padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+
+    /* Compact first screen and profile links */
+    .hero-copy { min-width: 0; }
+    .hero-focus { color: var(--muted); margin: -3px 0 18px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .hero-links a { padding: 6px 10px; border: 1px solid var(--line); background: var(--bg-soft); font-size: .92rem; white-space: nowrap; }
+    .hero-links a:hover, .hero-links a:focus-visible { background: #e9eff8; text-decoration: none; }
+    .more-profiles { font-size: .92rem; }
+    .more-profiles summary { cursor: pointer; color: var(--link); width: fit-content; }
+    .more-profiles summary:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+    .profile-details { margin-top: 12px; padding: 12px; background: var(--bg-soft); border: 1px solid var(--line); line-height: 2; overflow-wrap: anywhere; }
+    @media (max-width: 760px) {
+      header { grid-template-columns: minmax(0, 1fr) 96px; gap: 12px; padding: 16px; }
+      header > .hero-copy { display: block; grid-column: 1; grid-row: 1; }
+      header h1 { font-size: 1.75rem; line-height: 1.2; }
+      header .subtitle { font-size: .94rem; }
+      header .photo { grid-column: 2; grid-row: 1; width: 96px; height: 96px; }
+      .hero-focus { font-size: .9rem; }
+      .hero-links { gap: 6px; }
+      .hero-links a { padding: 5px 8px; }
+    }
+    @media (max-width: 390px) {
+      header { grid-template-columns: minmax(0, 1fr) 76px; }
+      header .photo { width: 76px; height: 76px; }
+    }
   </style>
 </head>
 
@@ -793,54 +818,43 @@
       </nav>
     </aside>
     <header id="home">
-      <div>
-        <h1>Igor Korkin, PhD</h1>        
-        <p class="subtitle">Operating System Security Researcher | Windows Internals · Kernel Security · Isolation</p>
-        <p class="nav-section">
-          <a href="#about">About</a> —
-          <a href="#talks">Talks</a> —
-          <a href="#recorded-talks">Videos</a> —
-          <a class="nav-monograph" href="https://igorkorkin.github.io/monograph/">Monograph</a> —
-          <a href="cv/resume.igor.korkin.pdf">CV</a> —
-          <a href="achievements.html">Achievements</a> —
-          <a href="https://igorkorkin.blogspot.com/" target="_blank" rel="noopener noreferrer">My blog</a>
-        </p>
-
-        <div class="links-grid">
-          <div class="links-grid-label">Contact:</div>
-          <p class="links-grid-values">
-            <a href="mailto:igor.korkin@gmail.com">E-mail</a> /
-            <a href="https://t.me/IgorKorkin" target="_blank" rel="noopener noreferrer">Telegram</a>
-          </p>
-
-          <div class="links-grid-label">Professional:</div>
-          <p class="links-grid-values">
-            <a href="https://www.linkedin.com/in/igor-korkin/" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
-            <a href="https://github.com/IgorKorkin" target="_blank" rel="noopener noreferrer">GitHub</a> /
-            <a href="https://patents.google.com/patent/US20230289465A1/en" target="_blank" rel="noopener noreferrer">Google Patents</a> /
-            <a href="https://ieeexplore.ieee.org/author/37088908930" target="_blank" rel="noopener noreferrer">IEEE Xplore</a> /
-            <a href="https://elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">РИНЦ</a>
-          </p>
-
-          <div class="links-grid-label">Academic:</div>
-          <p class="links-grid-values">
-            <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> /
-            <a href="https://orcid.org/0000-0001-7640-2792" target="_blank" rel="noopener noreferrer">ORCID</a> /
-            <a href="https://arxiv.org/a/korkin_i_1.html" target="_blank" rel="noopener noreferrer">arXiv</a> /
-            <a href="https://dblp.uni-trier.de/pers/hd/k/Korkin:Igor" target="_blank" rel="noopener noreferrer">DBLP</a> /
-            <a href="https://www.scopus.com/authid/detail.uri?authorId=57219459633" target="_blank" rel="noopener noreferrer">Scopus</a> /
-            <a href="https://www.webofscience.com/wos/author/record/294131" target="_blank" rel="noopener noreferrer">Web of Science</a> /
-            <a href="https://www.webofscience.com/wos/author/record/N-2544-2013" target="_blank" rel="noopener noreferrer">ResearcherID</a> /
-            <a href="https://www.researchgate.net/profile/Igor-Korkin-2" target="_blank" rel="noopener noreferrer">ResearchGate</a> /
-            <a href="https://openreview.net/profile?id=~Igor_Korkin1" target="_blank" rel="noopener noreferrer">OpenReview</a> /
-            <a href="https://www.semanticscholar.org/author/3114387" target="_blank" rel="noopener noreferrer">Semantic Scholar</a> /
-            <a href="https://www.elibrary.ru/author_profile.asp?id=680616" target="_blank" rel="noopener noreferrer">eLibrary / RSCI</a> /
-            <a href="https://www.dslib.net/author/igor.korkin.html" target="_blank" rel="noopener noreferrer">DsLib.net</a> /
-            <a href="https://mephi.academia.edu/IgorKorkin" target="_blank" rel="noopener noreferrer">Academia.edu</a>
-          </p>
-        </div>
+      <div class="hero-copy">
+        <h1>Igor Korkin, PhD</h1>
+        <p class="subtitle">Operating System Security Researcher</p>
+        <p class="hero-focus">Windows Internals · Kernel Security · Hypervisor-based Protection · Desktop Isolation</p>
+        <nav class="hero-links" aria-label="Research profiles and contact">
+          <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ">Google Scholar</a>
+          <a href="https://github.com/IgorKorkin">GitHub</a>
+          <a href="https://orcid.org/0000-0001-7640-2792">ORCID</a>
+          <a href="cv/resume.igor.korkin.pdf">CV</a>
+          <a href="mailto:igor.korkin@gmail.com">Email</a>
+        </nav>
+        <details class="more-profiles">
+          <summary>More academic profiles and links</summary>
+          <div class="profile-details">
+            <a href="https://igorkorkin.github.io/monograph/">Monograph</a> ·
+            <a href="achievements.html">Achievements</a> ·
+            <a href="https://igorkorkin.blogspot.com/">Blog</a> ·
+            <a href="https://t.me/IgorKorkin">Telegram</a> ·
+            <a href="https://www.linkedin.com/in/igor-korkin/">linkedin.com</a> ·
+            <a href="https://patents.google.com/patent/US20230289465A1/en">patents.google.com</a> ·
+            <a href="https://ieeexplore.ieee.org/author/37088908930">ieeexplore.ieee.org</a> ·
+            <a href="https://elibrary.ru/author_profile.asp?id=680616">eLibrary / RSCI</a> ·
+            <a href="https://arxiv.org/a/korkin_i_1.html">arxiv.org</a> ·
+            <a href="https://dblp.uni-trier.de/pers/hd/k/Korkin:Igor">dblp.uni-trier.de</a> ·
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=57219459633">scopus.com</a> ·
+            <a href="https://www.webofscience.com/wos/author/record/294131">webofscience.com</a> ·
+            <a href="https://www.webofscience.com/wos/author/record/N-2544-2013">webofscience.com</a> ·
+            <a href="https://www.researchgate.net/profile/Igor-Korkin-2">researchgate.net</a> ·
+            <a href="https://openreview.net/profile?id=~Igor_Korkin1">openreview.net</a> ·
+            <a href="https://www.semanticscholar.org/author/3114387">semanticscholar.org</a> ·
+            <a href="https://www.elibrary.ru/author_profile.asp?id=680616">elibrary.ru</a> ·
+            <a href="https://www.dslib.net/author/igor.korkin.html">dslib.net</a> ·
+            <a href="https://mephi.academia.edu/IgorKorkin">mephi.academia.edu</a>
+          </div>
+        </details>
       </div>
-      <img class="photo" src="igor.korkin.photo.jpg" alt="Igor Korkin" />
+      <img class="photo" src="igor.korkin.photo.jpg" alt="Portrait of Igor Korkin" width="170" height="170" />
     </header>
 
     <section class="hero-topics" aria-label="Research areas">
