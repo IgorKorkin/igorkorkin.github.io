@@ -766,6 +766,10 @@
     .publication-list .pub-meta { display: block; color: var(--muted); font-size: .94rem; margin-top: 4px; }
     .publication-list .pub-links { display: block; font-size: .92rem; margin-top: 5px; }
     .publication-footer { margin: 16px 0 0; }
+
+    .news-archive { margin-top: 14px; font-size: .94rem; color: var(--muted); }
+    .talks-intro { color: var(--muted); }
+    .talks-archive-heading { margin: 22px 0 16px; padding-bottom: 7px; border-bottom: 1px solid var(--line); }
   </style>
 </head>
 
@@ -1061,42 +1065,57 @@
         </section>
 
         <section id="news">
-          <h2>News</h2>
+          <h2>News &amp; Updates</h2>
           <ul>
-            <li>
-              <span class="date">2026</span> Published the monograph
-              <a href="https://igorkorkin.github.io/monograph/">Kernel Protection of Operating Systems Under Countermeasures</a>.
+            <li><span class="date">Oct 2026</span>
+              Continuing research on Windows Desktop isolation and secure execution of autonomous AI agents.
+              <a href="https://github.com/IgorKorkin/DesktopRanger">DesktopRanger source code</a>.
             </li>
-            <li>
-              <span class="date">2023</span> Presented
-              <a href="https://conference.hitb.org/hitbsecconf2023hkt/session/commsec-alpchecker-detecting-spoofing-and-blinding-attacks/" target="_blank" rel="noopener noreferrer">ALPChecker: Detecting Spoofing and Blinding Attacks</a>
-              at HITBSecConf Phuket.
+            <li><span class="date">Sep 2026</span>
+              Paper accepted for an upcoming oral presentation at
+              <strong>ICCC 2026</strong> (Chengdu, China, December 11–14):
+              <em>Capability Canaries for Windows GUI Isolation: Deception-Based Detection of Cross-Desktop Access</em>.
             </li>
-            <li>
-              <span class="date">2022</span> Presented
-              <a href="https://www.binarly.io/events/blasting-event-driven-cornucopiawmi-based-user-space-attacks-blind-siems-and-edrs" target="_blank" rel="noopener noreferrer">Blasting Event-Driven Cornucopia</a>
-              at Black Hat USA, LABScon, and Ekoparty.
+            <li><span class="date">Aug 2026</span>
+              Presented Windows Desktop isolation research at <strong>OFFZONE 2026</strong>.
             </li>
-            <li>
-              <span class="date">2021</span> Presented
-              <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs" target="_blank" rel="noopener noreferrer">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</a>
-              at Black Hat Europe.
+            <li><span class="date">Jul 2026</span>
+              Presented Windows Desktop isolation research at <strong>Pass the SALT 2026</strong>.
             </li>
-            <li>
-              <span class="date">2020</span> Presented
-              <em>Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</em>
-              at HITB Lockdown 002.
-            </li>
-            <li>
-              <span class="date">2018</span> Presented
-              <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668" target="_blank" rel="noopener noreferrer">Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces</a>
-              at Black Hat Europe.
+            <li><span class="date">2026</span>
+              Published the monograph
+              <a href="https://igorkorkin.github.io/monograph/">Kernel Protection of Operating Systems Under Countermeasures</a>
+              (INFRA-M, 488 pages).
             </li>
           </ul>
+          <p class="news-archive">Earlier conferences, publications, and milestones:
+            <a href="achievements.html">full achievements archive</a>.
+          </p>
         </section>
 
         <section id="talks">
-          <h2>Recent Talks</h2>
+          <h2>Selected Conference Talks</h2>
+          <p class="talks-intro">Recent presentations and selected international talks. Historical talks and video recordings are preserved below.</p>
+          <div class="paper">
+            <h3>Windows Desktop Isolation Research</h3>
+            <p class="venue">OFFZONE 2026 · Moscow, August 2026</p>
+            <p>Technical research on Windows Desktop security, access controls, and protection of interactive sessions.
+              <a href="https://github.com/IgorKorkin/DesktopRanger">Related project</a>
+            </p>
+          </div>
+          <div class="paper">
+            <h3>Windows Desktop Isolation Research</h3>
+            <p class="venue">Pass the SALT 2026 · July 2026</p>
+            <p>Presentation on Windows Desktop isolation and related attack surfaces.
+              <a href="https://github.com/IgorKorkin/DesktopRanger">Related project</a>
+            </p>
+          </div>
+          <div class="paper">
+            <h3>Capability Canaries for Windows GUI Isolation: Deception-Based Detection of Cross-Desktop Access</h3>
+            <p class="venue">ICCC 2026 · Chengdu, December 11–14, 2026 · Upcoming oral presentation</p>
+            <p>Accepted conference paper on deception-based detection of cross-desktop access.</p>
+          </div>
+          <h3 class="talks-archive-heading">Earlier Selected Talks</h3>
           <div class="paper">
             <h3>ALPChecker: Detecting Spoofing and Blinding Attacks</h3>
             <p class="venue">HITBSecConf Phuket, 2023</p>
@@ -1442,7 +1461,7 @@
     </section>
 
     <footer>
-      Last updated: April 2026.
+      Last updated: October 2026.
     </footer>
   </div>
 
