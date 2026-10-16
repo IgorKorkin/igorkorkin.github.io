@@ -744,6 +744,17 @@
       .site-sidebar a { padding: 8px 10px; }
       html { scroll-padding-top: 85px; }
     }
+
+    /* Selected research: compact academic project summaries */
+    .research-intro { max-width: 760px; color: var(--muted); }
+    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 18px 0 0; }
+    .research-project { padding: 17px; border: 1px solid var(--line); background: var(--bg-soft); min-width: 0; }
+    .research-project h3 { margin: 3px 0 9px; font-size: 1.08rem; }
+    .research-project p { margin: 0 0 10px; }
+    .research-project p:last-child { margin-bottom: 0; }
+    .research-project .research-area { color: var(--muted); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .research-project .research-artifacts { font-size: .92rem; }
+    @media (max-width: 760px) { .research-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 
@@ -754,6 +765,7 @@
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#news">News</a>
         <a href="#talks">Talks</a>
         <a href="#recorded-talks">Videos</a>
@@ -919,6 +931,71 @@
 
     <main>
       <div>
+        <section id="research" aria-labelledby="research-heading">
+          <h2 id="research-heading">Selected Research</h2>
+          <p class="research-intro">
+            My research focuses on operating-system isolation and defense mechanisms, from
+            hardware-assisted kernel protection to Windows GUI security and constrained execution
+            of autonomous software agents. The projects below connect ideas, implementations,
+            publications, and conference presentations.
+          </p>
+          <div class="research-grid">
+            <article class="research-project">
+              <p class="research-area">Windows Desktop &amp; GUI Security</p>
+              <h3>DesktopRanger</h3>
+              <p>
+                Isolation of Windows Desktop objects to reduce cross-desktop access,
+                GUI-hook exposure, and interception of user interaction.
+                Current experiments include desktop access policies and detection
+                using decoy Desktop objects.
+              </p>
+              <p class="research-artifacts">
+                <a href="https://github.com/IgorKorkin/DesktopRanger">Source code</a> ·
+                <a href="https://igorkorkin.github.io/research/">Research notes</a>
+              </p>
+            </article>
+            <article class="research-project">
+              <p class="research-area">Hypervisor-based Kernel Protection</p>
+              <h3>MemoryRanger</h3>
+              <p>
+                Hardware-assisted memory isolation for Windows kernel components
+                using Intel virtualization technology and Extended Page Tables.
+                The project investigates ways to restrict unauthorized memory
+                access by kernel-mode code.
+              </p>
+              <p class="research-artifacts">
+                <a href="https://github.com/IgorKorkin/MemoryRanger">Source code</a> ·
+                <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668">Black Hat Europe 2018</a>
+              </p>
+            </article>
+            <article class="research-project">
+              <p class="research-area">Autonomous AI Agent Isolation</p>
+              <h3>ZIS — Protected Interactive Environment</h3>
+              <p>
+                Ongoing research on operating-system mechanisms for executing
+                autonomous AI agents with constrained access to files, processes,
+                network resources, and interactive Windows objects.
+              </p>
+              <p class="research-artifacts">
+                <a href="https://github.com/IgorKorkin/DesktopRanger">Related isolation research</a>
+              </p>
+            </article>
+            <article class="research-project">
+              <p class="research-area">Endpoint Telemetry &amp; Evasion</p>
+              <h3>ETW &amp; WMI Security</h3>
+              <p>
+                Research into attacks and trust boundaries in Windows Event Tracing
+                (ETW) and Windows Management Instrumentation (WMI), including
+                their implications for EDR and SIEM visibility.
+              </p>
+              <p class="research-artifacts">
+                <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs">Black Hat Europe 2021</a> ·
+                <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211">Black Hat USA 2022</a>
+              </p>
+            </article>
+          </div>
+        </section>
+
         <section id="news">
           <h2>News</h2>
           <ul>
