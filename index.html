@@ -729,7 +729,7 @@
     /* One-page academic layout */
     html { scroll-behavior: smooth; scroll-padding-top: 24px; }
     .page { max-width: 1180px; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 0 28px; align-items: start; }
-    .site-sidebar { grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 24px; padding: 20px 12px; border: 1px solid #111827; background: #111827; color: #fff; max-height: calc(100vh - 48px); overflow-y: auto; }
+    .site-sidebar { grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 0; box-sizing: border-box; height: 100vh; padding: 24px 12px; border: 1px solid #111827; background: #111827; color: #fff; overflow-y: auto; }
     .site-sidebar nav { display: flex; flex-direction: column; gap: 3px; }
     .site-sidebar a, .site-sidebar a:visited { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 2px; color: #e5e7eb; font-size: .94rem; text-decoration: none; transition: background-color .15s ease, color .15s ease; }
     .site-sidebar a:hover, .site-sidebar a:focus-visible { background: #374151; color: #fff; text-decoration: none; }
@@ -739,10 +739,14 @@
     .sidebar-external { margin-top: 8px; padding-top: 8px; border-top: 1px solid #4b5563; }
     .site-sidebar .sidebar-external a { color: #d1d5db; }
     .page > :not(.site-sidebar) { grid-column: 2; min-width: 0; }
+    @media (min-width: 851px) {
+      body { padding-top: 0; }
+      .page > header { margin-top: 34px; }
+    }
     header .nav-section { display: none; }
     @media (max-width: 850px) {
       .page { display: block; }
-      .site-sidebar { position: sticky; top: 0; z-index: 100; padding: 8px 10px; margin-bottom: 16px; max-height: none; overflow-y: visible; }
+      .site-sidebar { position: sticky; top: 0; z-index: 100; height: auto; padding: 8px 10px; margin-bottom: 16px; overflow-y: visible; }
       .sidebar-title { display: none; }
       .site-sidebar nav { flex-direction: row; overflow-x: auto; white-space: nowrap; gap: 4px; }
       .site-sidebar a, .site-sidebar a:visited { padding: 8px 10px; border-left: 0; border-bottom: 3px solid transparent; }
