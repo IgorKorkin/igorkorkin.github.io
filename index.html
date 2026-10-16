@@ -832,6 +832,19 @@
     .bibliography-entry:last-child { border-bottom:0; }
     .publication-citations { margin-top:13px; font-size:.91rem; }
     @media(max-width:540px) { .citation-row { grid-template-columns:1fr; row-gap:3px; } }
+
+    /* Google Sites-inspired scholarly bibliography: title, then stacked citation groups. */
+    .full-bibliography { background:#fff; border:0; padding:12px 0; }
+    .bibliography-heading { margin:0 0 14px; color:var(--text); }
+    .full-bibliography .pub-list { margin:18px 0 0; padding-left:30px; list-style:decimal; }
+    .full-bibliography .bibliography-entry { margin:0 0 24px; padding:0 0 19px 0; border-bottom:1px solid var(--line); }
+    .record-title { display:block; font-weight:700; margin-bottom:7px; line-height:1.5; }
+    .record-details { list-style:square; padding-left:23px; margin:7px 0 13px; }
+    .record-detail { margin-bottom:11px; padding-left:3px; }
+    .record-detail > strong { display:block; margin:0 0 4px; font-size:.96rem; color:var(--text); }
+    .record-detail-body { line-height:1.65; overflow-wrap:anywhere; }
+    .record-detail-body a { overflow-wrap:anywhere; }
+    .publication-list .record-details { margin-top:14px; }
   </style>
 </head>
 
@@ -1095,9 +1108,10 @@
                 <a href="https://github.com/IgorKorkin/monograph">Repository</a>
               </span>
             
-              <div class="publication-citations">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И. Ю. Защита ядра операционных систем в условиях противодействия : монография. — Москва : ИНФРА-М, 2026. — 488 с. — ISBN 978-5-16-021527-3. — DOI: 10.12737/2228735. — EDN: MMFTWR.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Korkin, I. Y. (2026). Zashchita yadra operatsionnykh sistem v usloviyakh protivodeystviya [Kernel protection of operating systems under countermeasures]. INFRA-M. https://doi.org/10.12737/2228735</span></div>
+              <ul class="record-details">
+                <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И. Ю. Защита ядра операционных систем в условиях противодействия : монография. — Москва : ИНФРА-М, 2026. — 488 с. — ISBN 978-5-16-021527-3. — DOI: 10.12737/2228735. — EDN: MMFTWR.</div></li>
+                <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Korkin, I. Y. (2026). Zashchita yadra operatsionnykh sistem v usloviyakh protivodeystviya [Kernel protection of operating systems under countermeasures]. INFRA-M. https://doi.org/10.12737/2228735</div></li>
+              </ul>
               </div></li>
             <li>
               <span class="pub-year">2021</span>
@@ -1126,197 +1140,487 @@
             </li>
           </ol>
 
-          <details class="full-bibliography" id="bibliography" open>
-            <summary>Historical bibliography (59 entries, 2009–2025) — GOST and verified APA 7 citations</summary>
-            <p class="bibliography-note">All 59 archived entries are visible for Ctrl+F text search and Ctrl+A selection. APA 7 is shown for entries whose citation has been verified against the archival record; other APA records will be added after verification. The 2026 monograph appears in Selected Publications above.</p>
+          <div class="full-bibliography" id="bibliography">
+            <h3 class="bibliography-heading">Historical bibliography (59 entries, 2009–2025)</h3>
+            <p class="bibliography-note">Original bibliographic descriptions are preserved below, arranged by year (newest first). APA 7 is included for records where it has been verified. All text is visible and searchable with Ctrl+F.</p>
             <p class="bibliography-note"><strong>Early publication (non-security, 2005):</strong><br />
               Korkin I. Y., Prokoptsev P. I., Pavlishin P. P., Semenkova E. A. Measuring the sharp surface of cutting tools (Cutter profilometer) // Tractors and Agricultural Machinery. — 2005. — № 5. — P. 35–36. ISSN 0235-8573.
             </p>
             <ol class="pub-list">
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. О подходе к защите приложений класса «менеджер паролей» от перехвата клавиатурного ввода / И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. 3-ой Всерос. науч.-техн. конф. «КИБ-2025». — М., 2025. — С. 70-71.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Korkin, I. Y. (2025). O podkhode k zashchite prilozhenii klassa “menedzher parolei” ot perekhvata klaviaturnogo vvoda [An approach to protecting password-manager applications from keyboard input interception]. In Kibernetika i informatsionnaya bezopasnost' “KIB-2025”: Proceedings of the Third All-Russian Scientific and Technical Conference, Moscow, Russia, December 3–4, 2025 (pp. 70–71). NRNU MEPhI.</span></div>
+                <strong class="record-title">О подходе к защите приложений класса «менеджер паролей» от перехвата клавиатурного ввода</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. О подходе к защите приложений класса «менеджер паролей» от перехвата клавиатурного ввода / И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. 3-ой Всерос. науч.-техн. конф. «КИБ-2025». — М., 2025. — С. 70-71.</div></li>
+                  <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Korkin, I. Y. (2025). O podkhode k zashchite prilozhenii klassa “menedzher parolei” ot perekhvata klaviaturnogo vvoda [An approach to protecting password-manager applications from keyboard input interception]. In Kibernetika i informatsionnaya bezopasnost' “KIB-2025”: Proceedings of the Third All-Russian Scientific and Technical Conference, Moscow, Russia, December 3–4, 2025 (pp. 70–71). NRNU MEPhI.</div></li>
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Гришин М.А. Гибридная схема направленного фаззинг тестирования ядра Linux с использованием инструмента Syzkaller / М.А. Гришин, И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. 2-ой Всерос. науч.-техн. конф. «КИБ-2024». — М., 2024. — С. 238–239.</span></div>
+                <strong class="record-title">Гибридная схема направленного фаззинг тестирования ядра Linux с использованием инструмента Syzkaller</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Гришин М.А. Гибридная схема направленного фаззинг тестирования ядра Linux с использованием инструмента Syzkaller / М.А. Гришин, И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. 2-ой Всерос. науч.-техн. конф. «КИБ-2024». — М., 2024. — С. 238–239.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Kropova A. ALPChecker — Detecting Spoofing and Blinding Attacks / A. Kropova, I. Korkin // Hack In The Box Security Conference (HITBSecConf2023), CommSec Track. — Phuket, Thailand, 2023. — URL: https://www.youtube.com/watch?v=DV0dls206zc.</span></div>
+                <strong class="record-title">ALPChecker — Detecting Spoofing and Blinding Attacks</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Kropova A. ALPChecker — Detecting Spoofing and Blinding Attacks / A. Kropova, I. Korkin // Hack In The Box Security Conference (HITBSecConf2023), CommSec Track. — Phuket, Thailand, 2023. — URL: https://www.youtube.com/watch?v=DV0dls206zc.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=DV0dls206zc">https://www.youtube.com/watch?v=DV0dls206zc</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Кропова А.В. Исследование вопросов безопасности технологии ALPC в условиях атак с использованием драйверов Windows / А.В. Кропова, И.Ю. Коркин // ИНТЕРЭКСПО ГЕО-СИБИРЬ. — 2023. — Т. 7, № 2. — С. 43–50.</span></div>
+                <strong class="record-title">Исследование вопросов безопасности технологии ALPC в условиях атак с использованием драйверов Windows</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Кропова А.В. Исследование вопросов безопасности технологии ALPC в условиях атак с использованием драйверов Windows / А.В. Кропова, И.Ю. Коркин // ИНТЕРЭКСПО ГЕО-СИБИРЬ. — 2023. — Т. 7, № 2. — С. 43–50.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Счастливцев К.Д. Анализ защиты операционной системы Windows 11 от внедрения кода в процессы / К.Д. Счастливцев, И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. Всерос. науч.-техн. конф. «КИБ-2023». — М., 2023. — С. 30–31.</span></div>
+                <strong class="record-title">Анализ защиты операционной системы Windows 11 от внедрения кода в процессы</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Счастливцев К.Д. Анализ защиты операционной системы Windows 11 от внедрения кода в процессы / К.Д. Счастливцев, И.Ю. Коркин // Кибернетика и информационная безопасность: сб. науч. тр. Всерос. науч.-техн. конф. «КИБ-2023». — М., 2023. — С. 30–31.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Голуб С.А. Анализ безопасности подсистем локальной аутентификации ОС семейств Windows и Linux / С.А. Голуб, И.Ю. Коркин // Безопасность информационных технологий. — 2022. — Т. 29, № 1. — С. 57–69.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Golub, S. A., & Korkin, I. Y. (2022). An analysis of local security authority subsystem services for Windows and Linux. Security of Information Technologies, 29(1), 57–69. https://doi.org/10.26583/bit.2022.1.06</span></div>
+                <strong class="record-title">Анализ безопасности подсистем локальной аутентификации ОС семейств Windows и Linux</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Голуб С.А. Анализ безопасности подсистем локальной аутентификации ОС семейств Windows и Linux / С.А. Голуб, И.Ю. Коркин // Безопасность информационных технологий. — 2022. — Т. 29, № 1. — С. 57–69.</div></li>
+                  <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Golub, S. A., & Korkin, I. Y. (2022). An analysis of local security authority subsystem services for Windows and Linux. Security of Information Technologies, 29(1), 57–69. https://doi.org/10.26583/bit.2022.1.06</div></li>
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Grishin M. Human-Controlled Fuzzing With AFL / M. Grishin, I. Korkin // Proceedings of the 15th Annual ADFSL Conference on Digital Forensics, Security and Law. — Florida, USA, 2022. — URL: https://commons.erau.edu/adfsl/2022/presentations/3/.</span></div>
+                <strong class="record-title">Human-Controlled Fuzzing With AFL</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Grishin M. Human-Controlled Fuzzing With AFL / M. Grishin, I. Korkin // Proceedings of the 15th Annual ADFSL Conference on Digital Forensics, Security and Law. — Florida, USA, 2022. — URL: https://commons.erau.edu/adfsl/2022/presentations/3/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2022/presentations/3/">https://commons.erau.edu/adfsl/2022/presentations/3/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Grishin M. Human-Controlled Fuzzing with AFL / M. Grishin, I. Korkin // ROOTCON 16. — Philippines, 2022. — URL: https://www.youtube.com/watch?v=__5KbGy2cHk.</span></div>
+                <strong class="record-title">Human-Controlled Fuzzing with AFL</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Grishin M. Human-Controlled Fuzzing with AFL / M. Grishin, I. Korkin // ROOTCON 16. — Philippines, 2022. — URL: https://www.youtube.com/watch?v=__5KbGy2cHk.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=__5KbGy2cHk">https://www.youtube.com/watch?v=__5KbGy2cHk</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Pogonin D. Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV / D. Pogonin, I. Korkin // Proceedings of the 15th Annual ADFSL Conference on Digital Forensics, Security and Law. — Florida, USA, 2022. — URL: https://commons.erau.edu/adfsl/2022/presentations/7/.</span></div>
+                <strong class="record-title">Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Pogonin D. Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV / D. Pogonin, I. Korkin // Proceedings of the 15th Annual ADFSL Conference on Digital Forensics, Security and Law. — Florida, USA, 2022. — URL: https://commons.erau.edu/adfsl/2022/presentations/7/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2022/presentations/7/">https://commons.erau.edu/adfsl/2022/presentations/7/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Pogonin D. Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV / D. Pogonin, I. Korkin // ROOTCON 16. — Philippines, 2022. — URL: https://www.youtube.com/watch?v=dF7TP1V6wTM.</span></div>
+                <strong class="record-title">Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Pogonin D. Microsoft Defender Will Be Defended: MemoryRanger Prevents Blinding Windows AV / D. Pogonin, I. Korkin // ROOTCON 16. — Philippines, 2022. — URL: https://www.youtube.com/watch?v=dF7TP1V6wTM.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=dF7TP1V6wTM">https://www.youtube.com/watch?v=dF7TP1V6wTM</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Blasting Event-Driven Cornucopia: WMI-based User-Space Attacks Blind SIEMs and EDRs / I. Korkin, C. Teodorescu, A. Golchikov // Black Hat USA Conference. — Las Vegas, USA, 2022. — URL: https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211.</span></div>
+                <strong class="record-title">Blasting Event-Driven Cornucopia: WMI-based User-Space Attacks Blind SIEMs and EDRs</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Blasting Event-Driven Cornucopia: WMI-based User-Space Attacks Blind SIEMs and EDRs / I. Korkin, C. Teodorescu, A. Golchikov // Black Hat USA Conference. — Las Vegas, USA, 2022. — URL: https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211">https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Blasting Event Driven Cornucopia: WMI Edition / I. Korkin, C. Teodorescu, A. Golchikov // LABScon. — Scottsdale, Arizona, USA, 2022. — URL: https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/.</span></div>
+                <strong class="record-title">Blasting Event Driven Cornucopia: WMI Edition</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Blasting Event Driven Cornucopia: WMI Edition / I. Korkin, C. Teodorescu, A. Golchikov // LABScon. — Scottsdale, Arizona, USA, 2022. — URL: https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/">https://www.sentinelone.com/labs/labscon-replay-blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Blinding Endpoint Security Solutions: WMI attack vectors / I. Korkin, C. Teodorescu, A. Golchikov // EKOPARTY. — Buenos Aires, Argentina, 2022. — URL: https://www.youtube.com/watch?v=Q35snDTxb6w.</span></div>
+                <strong class="record-title">Blinding Endpoint Security Solutions: WMI attack vectors</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Blinding Endpoint Security Solutions: WMI attack vectors / I. Korkin, C. Teodorescu, A. Golchikov // EKOPARTY. — Buenos Aires, Argentina, 2022. — URL: https://www.youtube.com/watch?v=Q35snDTxb6w.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=Q35snDTxb6w">https://www.youtube.com/watch?v=Q35snDTxb6w</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Калинкин А.О. Обнаружение программ-шифровальщиков на основе данных механизма трассировки событий и применения метода машинного обучения / А.О. Калинкин, С.А. Голуб, И.Ю. Коркин, Д.Н. Пятовский // Безопасность информационных технологий. — 2022. — Т. 29, № 3. — С. 82–93.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Kalinkin, A. O., Golub, S. A., Korkin, I. Y., & Pyatovskiy, D. N. (2022). Ransomware detection based on machine learning models and Event Tracing for Windows. Security of Information Technologies, 29(3), 82–93. https://doi.org/10.26583/bit.2022.3.07</span></div>
+                <strong class="record-title">Обнаружение программ-шифровальщиков на основе данных механизма трассировки событий и применения метода машинного обучения</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Калинкин А.О. Обнаружение программ-шифровальщиков на основе данных механизма трассировки событий и применения метода машинного обучения / А.О. Калинкин, С.А. Голуб, И.Ю. Коркин, Д.Н. Пятовский // Безопасность информационных технологий. — 2022. — Т. 29, № 3. — С. 82–93.</div></li>
+                  <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Kalinkin, A. O., Golub, S. A., Korkin, I. Y., & Pyatovskiy, D. N. (2022). Ransomware detection based on machine learning models and Event Tracing for Windows. Security of Information Technologies, 29(3), 82–93. https://doi.org/10.26583/bit.2022.3.07</div></li>
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again / I. Korkin // Journal of Digital Forensics, Security and Law. — 2021. — URL: https://commons.erau.edu/jdfsl/vol16/iss1/4/.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Korkin, I. (2021). Windows kernel hijacking is not an option: MemoryRanger comes to the rescue again. Journal of Digital Forensics, Security and Law, 16, Article 4. https://doi.org/10.58940/1558-7223.1726</span></div>
+                <strong class="record-title">Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again / I. Korkin // Journal of Digital Forensics, Security and Law. — 2021. — URL: https://commons.erau.edu/jdfsl/vol16/iss1/4/.</div></li>
+                  <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Korkin, I. (2021). Windows kernel hijacking is not an option: MemoryRanger comes to the rescue again. Journal of Digital Forensics, Security and Law, 16, Article 4. https://doi.org/10.58940/1558-7223.1726</div></li>
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/jdfsl/vol16/iss1/4/">https://commons.erau.edu/jdfsl/vol16/iss1/4/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Protected Process Light is not Protected: MemoryRanger Fills The Gap Again / I. Korkin // Systematic Approaches to Digital Forensic Engineering (SADFE) International Workshop in conjunction with the 42nd IEEE Symposium on Security and Privacy: Proceedings of 2021 IEEE Symposium on Security and Privacy Workshops. — San Francisco, CA, USA, 2021. — URL: https://ieeexplore.ieee.org/document/9474278.</span></div>
+                <strong class="record-title">Protected Process Light is not Protected: MemoryRanger Fills The Gap Again</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Protected Process Light is not Protected: MemoryRanger Fills The Gap Again / I. Korkin // Systematic Approaches to Digital Forensic Engineering (SADFE) International Workshop in conjunction with the 42nd IEEE Symposium on Security and Privacy: Proceedings of 2021 IEEE Symposium on Security and Privacy Workshops. — San Francisco, CA, USA, 2021. — URL: https://ieeexplore.ieee.org/document/9474278.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://ieeexplore.ieee.org/document/9474278">https://ieeexplore.ieee.org/document/9474278</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Protected Process Light will be Protected — MemoryRanger Fills the Gap Again / I. Korkin // Texas Cyber Summit IV. — San Antonio, Texas, USA, 2021. — URL: https://www.youtube.com/watch?v=oY28U6U2moo.</span></div>
+                <strong class="record-title">Protected Process Light will be Protected — MemoryRanger Fills the Gap Again</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Protected Process Light will be Protected — MemoryRanger Fills the Gap Again / I. Korkin // Texas Cyber Summit IV. — San Antonio, Texas, USA, 2021. — URL: https://www.youtube.com/watch?v=oY28U6U2moo.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=oY28U6U2moo">https://www.youtube.com/watch?v=oY28U6U2moo</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Your Linux Passwords Are in Danger: MimiDove Meets the Challenge / I. Korkin, S. Golub // Texas Cyber Summit IV. — San Antonio, Texas, USA, 2021. — URL: https://www.youtube.com/watch?v=R4yWYtTqH4I.</span></div>
+                <strong class="record-title">Your Linux Passwords Are in Danger: MimiDove Meets the Challenge</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Your Linux Passwords Are in Danger: MimiDove Meets the Challenge / I. Korkin, S. Golub // Texas Cyber Summit IV. — San Antonio, Texas, USA, 2021. — URL: https://www.youtube.com/watch?v=R4yWYtTqH4I.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.youtube.com/watch?v=R4yWYtTqH4I">https://www.youtube.com/watch?v=R4yWYtTqH4I</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Your Linux Passwords Are in Danger: MimiDove Meets the Challenge / I. Korkin, S. Golub // IOSR Journal of Computer Engineering. — 2021. — URL: https://www.iosrjournals.org/iosr-jce/papers/Vol23-issue6/Ser-1/C2306012728.pdf.</span></div>
+                <strong class="record-title">Your Linux Passwords Are in Danger: MimiDove Meets the Challenge</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Your Linux Passwords Are in Danger: MimiDove Meets the Challenge / I. Korkin, S. Golub // IOSR Journal of Computer Engineering. — 2021. — URL: https://www.iosrjournals.org/iosr-jce/papers/Vol23-issue6/Ser-1/C2306012728.pdf.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.iosrjournals.org/iosr-jce/papers/Vol23-issue6/Ser-1/C2306012728.pdf">https://www.iosrjournals.org/iosr-jce/papers/Vol23-issue6/Ser-1/C2306012728.pdf</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors / I. Korkin, C. Teodorescu, A. Golchikov // Black Hat Europe Conference. — London, UK, 2021. — URL: https://www.blackhat.com/eu-21/briefings/schedule/#veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors-24842.</span></div>
+                <strong class="record-title">Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Veni, No Vidi, No Vici: Attacks on ETW Blind EDR Sensors / I. Korkin, C. Teodorescu, A. Golchikov // Black Hat Europe Conference. — London, UK, 2021. — URL: https://www.blackhat.com/eu-21/briefings/schedule/#veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors-24842.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.blackhat.com/eu-21/briefings/schedule/#veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors-24842">https://www.blackhat.com/eu-21/briefings/schedule/#veni-no-vidi-no-vici-attacks-on-etw-blind-edr-sensors-24842</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Рудик М.В. Расширение возможностей Clang Static Analyzer для обнаружения новых уязвимостей / М.В. Рудик, И.Ю. Коркин // Естественные и технические науки. — 2021. — № 7 (158). — С. 225–230.</span></div>
+                <strong class="record-title">Расширение возможностей Clang Static Analyzer для обнаружения новых уязвимостей</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Рудик М.В. Расширение возможностей Clang Static Analyzer для обнаружения новых уязвимостей / М.В. Рудик, И.Ю. Коркин // Естественные и технические науки. — 2021. — № 7 (158). — С. 225–230.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again / I. Korkin // Hack In The Box Security Conference (HITB Lockdown 002). — Singapore, 2020. — URL: https://conference.hitb.org/hitb-lockdown002/sessions/kernel-hijacking-is-not-an-option-memoryranger-comes-to-rescue-again/.</span></div>
+                <strong class="record-title">Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again / I. Korkin // Hack In The Box Security Conference (HITB Lockdown 002). — Singapore, 2020. — URL: https://conference.hitb.org/hitb-lockdown002/sessions/kernel-hijacking-is-not-an-option-memoryranger-comes-to-rescue-again/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://conference.hitb.org/hitb-lockdown002/sessions/kernel-hijacking-is-not-an-option-memoryranger-comes-to-rescue-again/">https://conference.hitb.org/hitb-lockdown002/sessions/kernel-hijacking-is-not-an-option-memoryranger-comes-to-rescue-again/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Y., Lyashenko V. A., Lipnitsky A. A., Pak M. A., Bykovsky P. S. Analysis of Memory Dump Approaches for the MAC OS // Actual Scientific Research in the Modern World. — 2020. — URL: https://elibrary.ru/item.asp?id=43092509.</span></div>
+                <strong class="record-title">, Lyashenko V. A., Lipnitsky A. A., Pak M. A., Bykovsky P. S. Analysis of Memory Dump Approaches for the MAC OS</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Y., Lyashenko V. A., Lipnitsky A. A., Pak M. A., Bykovsky P. S. Analysis of Memory Dump Approaches for the MAC OS // Actual Scientific Research in the Modern World. — 2020. — URL: https://elibrary.ru/item.asp?id=43092509.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://elibrary.ru/item.asp?id=43092509">https://elibrary.ru/item.asp?id=43092509</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel / I. Korkin // Proceedings of the 14th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2019. — URL: https://commons.erau.edu/adfsl/2019/paper-presentation/7/.</span></div>
+                <strong class="record-title">MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel / I. Korkin // Proceedings of the 14th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2019. — URL: https://commons.erau.edu/adfsl/2019/paper-presentation/7/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2019/paper-presentation/7/">https://commons.erau.edu/adfsl/2019/paper-presentation/7/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel / I. Korkin // Journal of Digital Forensics, Security and Law. — 2019. — URL: https://commons.erau.edu/jdfsl/vol14/iss3/1/.</span></div>
+                <strong class="record-title">MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel / I. Korkin // Journal of Digital Forensics, Security and Law. — 2019. — URL: https://commons.erau.edu/jdfsl/vol14/iss3/1/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/jdfsl/vol14/iss3/1/">https://commons.erau.edu/jdfsl/vol14/iss3/1/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Поддубный В.А. Средство обнаружения скрытого исполнимого кода в памяти ОС Windows / В.А. Поддубный, И.Ю. Коркин // Вопросы кибербезопасности. — 2019. — № 5 (33). — С. 75–82.</span></div>
+                <strong class="record-title">Средство обнаружения скрытого исполнимого кода в памяти ОС Windows</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Поддубный В.А. Средство обнаружения скрытого исполнимого кода в памяти ОС Windows / В.А. Поддубный, И.Ю. Коркин // Вопросы кибербезопасности. — 2019. — № 5 (33). — С. 75–82.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Поддубный В.А. Средство обнаружения скрытого исполнимого кода в памяти ОС Windows / В.А. Поддубный, И.Ю. Коркин // Управление информационной безопасностью в современном обществе: VII Междунар. науч.-практ. конф. — М., 2019. — URL: https://www.elibrary.ru/item.asp?id=41517996.</span></div>
+                <strong class="record-title">Средство обнаружения скрытого исполнимого кода в памяти ОС Windows</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Поддубный В.А. Средство обнаружения скрытого исполнимого кода в памяти ОС Windows / В.А. Поддубный, И.Ю. Коркин // Управление информационной безопасностью в современном обществе: VII Междунар. науч.-практ. конф. — М., 2019. — URL: https://www.elibrary.ru/item.asp?id=41517996.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.elibrary.ru/item.asp?id=41517996">https://www.elibrary.ru/item.asp?id=41517996</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Казаков О.А. Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW / О.А. Казаков, И.Ю. Коркин // Вопросы кибербезопасности. — 2019. — № 5 (33). — С. 83–88.</span></div>
-                <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Kazakov, O. A., & Korkin, I. Y. (2019). Obnaruzhenie kriptomainerov v OS Windows instrumentami tekhnologii ETW [Revealing cryptocurrency mining malware via Event Tracing for Windows (ETW)]. Voprosy kiberbezopasnosti, 5(33), 83–88. https://doi.org/10.21681/2311-3456-2019-5-83-88</span></div>
+                <strong class="record-title">Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Казаков О.А. Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW / О.А. Казаков, И.Ю. Коркин // Вопросы кибербезопасности. — 2019. — № 5 (33). — С. 83–88.</div></li>
+                  <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Kazakov, O. A., & Korkin, I. Y. (2019). Obnaruzhenie kriptomainerov v OS Windows instrumentami tekhnologii ETW [Revealing cryptocurrency mining malware via Event Tracing for Windows (ETW)]. Voprosy kiberbezopasnosti, 5(33), 83–88. https://doi.org/10.21681/2311-3456-2019-5-83-88</div></li>
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Казаков О.А. Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW / О.А. Казаков, И.Ю. Коркин // Управление информационной безопасностью в современном обществе: VII Междунар. науч.-практ. конф. — М., 2019. — URL: https://www.elibrary.ru/item.asp?id=41517997.</span></div>
+                <strong class="record-title">Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Казаков О.А. Обнаружение криптомайнеров в ОС Windows инструментами технологии ETW / О.А. Казаков, И.Ю. Коркин // Управление информационной безопасностью в современном обществе: VII Междунар. науч.-практ. конф. — М., 2019. — URL: https://www.elibrary.ru/item.asp?id=41517997.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.elibrary.ru/item.asp?id=41517997">https://www.elibrary.ru/item.asp?id=41517997</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>I. Y. Korkin, O. A. Kazakov. Detection of Hidden Cryptocurrency Mining Malware in Windows OS // Information Security Management in Modern Society conference, 2019. — URL: https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf.</span></div>
+                <strong class="record-title">I. Y. Korkin, O. A. Kazakov. Detection of Hidden Cryptocurrency Mining Malware in Windows OS</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">I. Y. Korkin, O. A. Kazakov. Detection of Hidden Cryptocurrency Mining Malware in Windows OS // Information Security Management in Modern Society conference, 2019. — URL: https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf">https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>I. Y. Korkin, V. A. Poddubnyy. Detection of Hidden Executable Code in Windows Memory // Information Security Management in Modern Society conference, 2019. — URL: https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf.</span></div>
+                <strong class="record-title">I. Y. Korkin, V. A. Poddubnyy. Detection of Hidden Executable Code in Windows Memory</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">I. Y. Korkin, V. A. Poddubnyy. Detection of Hidden Executable Code in Windows Memory // Information Security Management in Modern Society conference, 2019. — URL: https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf">https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Hypervisor-Based Active Data Protection for Integrity and Confidentiality of Dynamically Allocated Memory in Windows Kernel / I. Korkin // Proceedings of the 13th Annual ADFSL Conference on Digital Forensics, Security and Law. — San Antonio, Texas, USA, 2018. — URL: https://commons.erau.edu/adfsl/2018/presentations/13/.</span></div>
+                <strong class="record-title">Hypervisor-Based Active Data Protection for Integrity and Confidentiality of Dynamically Allocated Memory in Windows Kernel</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Hypervisor-Based Active Data Protection for Integrity and Confidentiality of Dynamically Allocated Memory in Windows Kernel / I. Korkin // Proceedings of the 13th Annual ADFSL Conference on Digital Forensics, Security and Law. — San Antonio, Texas, USA, 2018. — URL: https://commons.erau.edu/adfsl/2018/presentations/13/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2018/presentations/13/">https://commons.erau.edu/adfsl/2018/presentations/13/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces / I. Korkin // Black Hat Europe Conference. — London, UK, 2018. — URL: https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668.</span></div>
+                <strong class="record-title">Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Divide et Impera: MemoryRanger Runs Drivers in Isolated Kernel Spaces / I. Korkin // Black Hat Europe Conference. — London, UK, 2018. — URL: https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668">https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Detect Kernel-Mode Rootkits via Real-Time Logging &amp; Controlling Memory Access / I. Korkin, S. Tanda // Proceedings of the 12th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2017. — URL: https://commons.erau.edu/adfsl/2017/papers/5/.</span></div>
+                <strong class="record-title">Detect Kernel-Mode Rootkits via Real-Time Logging &amp; Controlling Memory Access</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Detect Kernel-Mode Rootkits via Real-Time Logging &amp; Controlling Memory Access / I. Korkin, S. Tanda // Proceedings of the 12th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2017. — URL: https://commons.erau.edu/adfsl/2017/papers/5/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2017/papers/5/">https://commons.erau.edu/adfsl/2017/papers/5/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Acceleration of Statistical Detection of Zero-day Malware in the Memory Dump Using CUDA-enabled GPU Hardware / I. Korkin, I. Nesterov // Proceedings of the 11th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2016. — P. 47–82.</span></div>
+                <strong class="record-title">Acceleration of Statistical Detection of Zero-day Malware in the Memory Dump Using CUDA-enabled GPU Hardware</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Acceleration of Statistical Detection of Zero-day Malware in the Memory Dump Using CUDA-enabled GPU Hardware / I. Korkin, I. Nesterov // Proceedings of the 11th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2016. — P. 47–82.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Tanda S. Monitoring &amp; controlling kernel-mode events by HyperPlatform / S. Tanda, I. Korkin // REcon Conference. — Montreal, Canada, 2016. — URL: https://recon.cx/2016/talks/Monitoring-and-controlling-kernel-mode-events-by-HyperPlatform.html.</span></div>
+                <strong class="record-title">Monitoring &amp; controlling kernel-mode events by HyperPlatform</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Tanda S. Monitoring &amp; controlling kernel-mode events by HyperPlatform / S. Tanda, I. Korkin // REcon Conference. — Montreal, Canada, 2016. — URL: https://recon.cx/2016/talks/Monitoring-and-controlling-kernel-mode-events-by-HyperPlatform.html.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://recon.cx/2016/talks/Monitoring-and-controlling-kernel-mode-events-by-HyperPlatform.html">https://recon.cx/2016/talks/Monitoring-and-controlling-kernel-mode-events-by-HyperPlatform.html</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Igor Korkin. Cyber-Security of Autonomous Wireless Medical Devices For Supporting Life // Skolkovo Cybersecurity Challenge 2016. — URL: http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx.</span></div>
+                <strong class="record-title">Igor Korkin. Cyber-Security of Autonomous Wireless Medical Devices For Supporting Life</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Igor Korkin. Cyber-Security of Autonomous Wireless Medical Devices For Supporting Life // Skolkovo Cybersecurity Challenge 2016. — URL: http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx">http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations / I. Korkin // Proceedings of the 10th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2015. — P. 33–57.</span></div>
+                <strong class="record-title">Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations / I. Korkin // Proceedings of the 10th Annual ADFSL Conference on Digital Forensics, Security and Law. — Daytona Beach, Florida, USA, 2015. — P. 33–57.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations / I. Korkin // Journal of Digital Forensics, Security and Law. — 2015. — Vol. 10, № 2. — P. 7–38.</span></div>
+                <strong class="record-title">Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations / I. Korkin // Journal of Digital Forensics, Security and Law. — 2015. — Vol. 10, № 2. — P. 7–38.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Applying Memory Forensics to Rootkit Detection / I. Korkin, I. Nesterov // Proceedings of the 9th Annual ADFSL Conference on Digital Forensics, Security and Law. — Richmond, Virginia, USA, 2014. — P. 115–141.</span></div>
+                <strong class="record-title">Applying Memory Forensics to Rootkit Detection</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Applying Memory Forensics to Rootkit Detection / I. Korkin, I. Nesterov // Proceedings of the 9th Annual ADFSL Conference on Digital Forensics, Security and Law. — Richmond, Virginia, USA, 2014. — P. 115–141.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И. Руткиты: проблемы безопасности и тенденции развития / И. Коркин // Хакер. — 2013. — Вып. 5 (172). — С. 74–79.</span></div>
+                <strong class="record-title">Руткиты: проблемы безопасности и тенденции развития</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И. Руткиты: проблемы безопасности и тенденции развития / И. Коркин // Хакер. — 2013. — Вып. 5 (172). — С. 74–79.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Igor Korkin. Rootkits: Security Issues and Trends // Hacker Magazine. — 2013. — URL: https://xakep.ru/2013/05/01/60595/.</span></div>
+                <strong class="record-title">Igor Korkin. Rootkits: Security Issues and Trends</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Igor Korkin. Rootkits: Security Issues and Trends // Hacker Magazine. — 2013. — URL: https://xakep.ru/2013/05/01/60595/.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://xakep.ru/2013/05/01/60595/">https://xakep.ru/2013/05/01/60595/</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Обоснование критериев присутствия программного обеспечения, использующего технологию аппаратной виртуализации, в компьютерных системах / И.Ю. Коркин // Безопасность информационных технологий. — 2012. — Т. 19, № 2. — С. 90–92.</span></div>
+                <strong class="record-title">Обоснование критериев присутствия программного обеспечения, использующего технологию аппаратной виртуализации, в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Обоснование критериев присутствия программного обеспечения, использующего технологию аппаратной виртуализации, в компьютерных системах / И.Ю. Коркин // Безопасность информационных технологий. — 2012. — Т. 19, № 2. — С. 90–92.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Жуков А.Е. Модели выполнения процессорных инструкций в условиях противодействия со стороны нарушителя для компьютерных систем с поддержкой технологии аппаратной виртуализации / А.Е. Жуков, И.Ю. Коркин, Б.М. Сухинин // Безопасность информационных технологий. — 2012. — Т. 19, № 2. — С. 85–89.</span></div>
+                <strong class="record-title">Модели выполнения процессорных инструкций в условиях противодействия со стороны нарушителя для компьютерных систем с поддержкой технологии аппаратной виртуализации</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Жуков А.Е. Модели выполнения процессорных инструкций в условиях противодействия со стороны нарушителя для компьютерных систем с поддержкой технологии аппаратной виртуализации / А.Е. Жуков, И.Ю. Коркин, Б.М. Сухинин // Безопасность информационных технологий. — 2012. — Т. 19, № 2. — С. 85–89.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Уровневый метод обнаружения гипервизоров в компьютерных системах / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 21-ой Общерос. науч.-техн. конф. — СПб., 2012. — С. 110–113.</span></div>
+                <strong class="record-title">Уровневый метод обнаружения гипервизоров в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Уровневый метод обнаружения гипервизоров в компьютерных системах / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 21-ой Общерос. науч.-техн. конф. — СПб., 2012. — С. 110–113.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Anti-Rootkits in the Era of Cyber Wars / I. Korkin // Exploiting Software: SamuraiWTF Toolkit. — 2012. — Is. 7. — P. 26–29.</span></div>
+                <strong class="record-title">Anti-Rootkits in the Era of Cyber Wars</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Anti-Rootkits in the Era of Cyber Wars / I. Korkin // Exploiting Software: SamuraiWTF Toolkit. — 2012. — Is. 7. — P. 26–29.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Метод выявления аппаратной виртуализации в компьютерных системах на основе механизма кэширования / И.Ю. Коркин // Безопасность информационных технологий. — 2011. — Т. 18, № 1. — С. 101–103.</span></div>
+                <strong class="record-title">Метод выявления аппаратной виртуализации в компьютерных системах на основе механизма кэширования</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Метод выявления аппаратной виртуализации в компьютерных системах на основе механизма кэширования / И.Ю. Коркин // Безопасность информационных технологий. — 2011. — Т. 18, № 1. — С. 101–103.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Статистическая идентификация режимов работы компьютерных систем / И.Ю. Коркин // Телекоммуникации и новые информационные технологии в образовании: сб. науч. тр. 15-ой конф. — М.: Национальный исследовательский ядерный университет «МИФИ», 2011. — С. 163–165.</span></div>
+                <strong class="record-title">Статистическая идентификация режимов работы компьютерных систем</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Статистическая идентификация режимов работы компьютерных систем / И.Ю. Коркин // Телекоммуникации и новые информационные технологии в образовании: сб. науч. тр. 15-ой конф. — М.: Национальный исследовательский ядерный университет «МИФИ», 2011. — С. 163–165.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Выявление вложенных мониторов виртуальных машин / И.Ю. Коркин // Системы высокой доступности. — 2011. — Т. 7, № 2. — С. 76–77.</span></div>
+                <strong class="record-title">Выявление вложенных мониторов виртуальных машин</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Выявление вложенных мониторов виртуальных машин / И.Ю. Коркин // Системы высокой доступности. — 2011. — Т. 7, № 2. — С. 76–77.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Выявление вложенных мониторов виртуальных машин: доклад на конференции «РусКрипто» / И.Ю. Коркин. — 2011. — URL: https://ruscrypto.ru/accociation/news/2011-03-21.html.</span></div>
+                <strong class="record-title">Выявление вложенных мониторов виртуальных машин: доклад на конференции «РусКрипто»</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Выявление вложенных мониторов виртуальных машин: доклад на конференции «РусКрипто» / И.Ю. Коркин. — 2011. — URL: https://ruscrypto.ru/accociation/news/2011-03-21.html.</div></li>
+                  
+                  <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://ruscrypto.ru/accociation/news/2011-03-21.html">https://ruscrypto.ru/accociation/news/2011-03-21.html</a></div></li>
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Обнаружение вложенных мониторов виртуальных машин методами математической статистики / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 20-ой Общерос. науч.-техн. конф. — СПб., 2011. — С. 146–147.</span></div>
+                <strong class="record-title">Обнаружение вложенных мониторов виртуальных машин методами математической статистики</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Обнаружение вложенных мониторов виртуальных машин методами математической статистики / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 20-ой Общерос. науч.-техн. конф. — СПб., 2011. — С. 146–147.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Новые статистические показатели и методы для обнаружения мониторов виртуальных машин в компьютерных системах / И.Ю. Коркин // Естественные и технические науки. — 2011. — № 4 (54). — С. 498–502.</span></div>
+                <strong class="record-title">Новые статистические показатели и методы для обнаружения мониторов виртуальных машин в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Новые статистические показатели и методы для обнаружения мониторов виртуальных машин в компьютерных системах / И.Ю. Коркин // Естественные и технические науки. — 2011. — № 4 (54). — С. 498–502.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Korkin I. Strong Approach to Hardware-VM Rootkits Detection / I. Korkin // Hakin9 Extra — Rootkit. — 2011. — Is. 6. — P. 30–35.</span></div>
+                <strong class="record-title">Strong Approach to Hardware-VM Rootkits Detection</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Korkin I. Strong Approach to Hardware-VM Rootkits Detection / I. Korkin // Hakin9 Extra — Rootkit. — 2011. — Is. 6. — P. 30–35.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Метод обнаружения аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Проблемы информационной безопасности в системе высшей школы: сб. науч. тр. 17-ой Всерос. конф. — М., 2010. — С. 114–115.</span></div>
+                <strong class="record-title">Метод обнаружения аппаратной виртуализации в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Метод обнаружения аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Проблемы информационной безопасности в системе высшей школы: сб. науч. тр. 17-ой Всерос. конф. — М., 2010. — С. 114–115.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Метод обнаружения аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Безопасность информационных технологий. — 2010. — Т. 17, № 1. — С. 80–81.</span></div>
+                <strong class="record-title">Метод обнаружения аппаратной виртуализации в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Метод обнаружения аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Безопасность информационных технологий. — 2010. — Т. 17, № 1. — С. 80–81.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Критерий обнаружения монитора виртуальных машин в компьютерных системах / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 19-ой Общерос. науч.-техн. конф. — СПб., 2010. — С. 113–114.</span></div>
+                <strong class="record-title">Критерий обнаружения монитора виртуальных машин в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Критерий обнаружения монитора виртуальных машин в компьютерных системах / И.Ю. Коркин // Методы и технические средства обеспечения безопасности информации: сб. мат. 19-ой Общерос. науч.-техн. конф. — СПб., 2010. — С. 113–114.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Новый подход к выявлению аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Молодежь и наука: тез. докл. 14-ой Междунар. телекоммуник. конф. студентов и молодых ученых. — Ч. 3. — М.: Национальный исследовательский ядерный университет «МИФИ», 2010. — С. 241–242.</span></div>
+                <strong class="record-title">Новый подход к выявлению аппаратной виртуализации в компьютерных системах</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Новый подход к выявлению аппаратной виртуализации в компьютерных системах / И.Ю. Коркин, Т.В. Петрова, А.Ю. Тихонов // Молодежь и наука: тез. докл. 14-ой Междунар. телекоммуник. конф. студентов и молодых ученых. — Ч. 3. — М.: Национальный исследовательский ядерный университет «МИФИ», 2010. — С. 241–242.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Технологии сокрытия вредоносных программ и новые способы противодействия им / И.Ю. Коркин // Безопасность информационных технологий. — 2009. — Т. 16, № 4. — С. 43–46.</span></div>
+                <strong class="record-title">Технологии сокрытия вредоносных программ и новые способы противодействия им</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Технологии сокрытия вредоносных программ и новые способы противодействия им / И.Ю. Коркин // Безопасность информационных технологий. — 2009. — Т. 16, № 4. — С. 43–46.</div></li>
+                  
+                  
+                </ul>
               </li>
               <li class="bibliography-entry">
-                <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И.Ю. Способ обнаружения скрытых процессов в операционной системе Windows / И.Ю. Коркин // Проблемы информационной безопасности в системе высшей школы // Сб. науч. тр. 16-ой Всерос. конф. — М., 2009. — С. 111–112.</span></div>
+                <strong class="record-title">Способ обнаружения скрытых процессов в операционной системе Windows</strong>
+                <ul class="record-details">
+                  <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И.Ю. Способ обнаружения скрытых процессов в операционной системе Windows / И.Ю. Коркин // Проблемы информационной безопасности в системе высшей школы // Сб. науч. тр. 16-ой Всерос. конф. — М., 2009. — С. 111–112.</div></li>
+                  
+                  
+                </ul>
               </li>
             </ol>
-          </details>
+          </div>
 
           <p class="publication-footer">
             <a href="#bibliography">Complete bibliography ↓</a> ·
@@ -1379,11 +1683,11 @@
             <p>Technical research on Windows Desktop security, access controls, and protection of interactive sessions.
               <a href="https://github.com/IgorKorkin/DesktopRanger">Related project</a>
             </p>
-            <div class="publication-citations">
-              <div class="citation-row"><strong class="citation-label">ГОСТ</strong><span>Коркин И. Ю. Практический анализ безопасности Windows Desktop: атаки кейлоггеров и способы защиты : доклад на VII Международной конференции по практической кибербезопасности OFFZONE 2026, Москва, 21 августа 2026 г.</span></div>
-              <div class="citation-row"><strong class="citation-label">APA 7</strong><span>Korkin, I. (2026, August 21). Beyond Secure Desktop: Abusing and hardening Windows Desktop isolation [Conference presentation]. OFFZONE 2026: Seventh International Conference on Practical Cybersecurity, Moscow, Russia.</span></div>
-              <p><a href="https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference">Research archive</a></p>
-            </div>
+            <ul class="record-details">
+              <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И. Ю. Практический анализ безопасности Windows Desktop: атаки кейлоггеров и способы защиты : доклад на VII Международной конференции по практической кибербезопасности OFFZONE 2026, Москва, 21 августа 2026 г.</div></li>
+              <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Korkin, I. (2026, August 21). Beyond Secure Desktop: Abusing and hardening Windows Desktop isolation [Conference presentation]. OFFZONE 2026: Seventh International Conference on Practical Cybersecurity, Moscow, Russia.</div></li>
+              <li class="record-detail"><strong>Links</strong><div class="record-detail-body">GitHub research archive: <a href="https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference">https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference</a><br />DesktopRanger GitHub: <a href="https://github.com/IgorKorkin/DesktopRanger">https://github.com/IgorKorkin/DesktopRanger</a></div></li>
+            </ul>
           </div>
           <div class="paper">
             <h3>Windows Desktop Isolation Research</h3>
