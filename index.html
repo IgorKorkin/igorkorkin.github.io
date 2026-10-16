@@ -852,6 +852,11 @@
     .record-detail-body { line-height:1.65; overflow-wrap:anywhere; }
     .record-detail-body a { overflow-wrap:anywhere; }
     .publication-list .record-details { margin-top:14px; }
+
+    /* Chronological dividers retain continuous numbering across yearly lists. */
+    .bibliography-year { margin: 22px 0 6px; padding: 4px 0 7px; color: var(--link); font-size: 1.18rem; border-bottom: 1px solid var(--line); }
+    .early-publication { margin: 14px 0 23px; }
+    .early-publication p { margin: 6px 0; }
   </style>
 </head>
 
@@ -1151,11 +1156,14 @@
 
           <details class="full-bibliography" id="bibliography">
             <summary class="bibliography-heading">Historical bibliography (59 entries, 2009–2025)</summary>
-            <p class="bibliography-note">Original bibliographic descriptions are preserved below, arranged by year (newest first). APA 7 is included for records where it has been verified. All text is visible and searchable with Ctrl+F.</p>
-            <p class="bibliography-note"><strong>Early publication (non-security, 2005):</strong><br />
-              Korkin I. Y., Prokoptsev P. I., Pavlishin P. P., Semenkova E. A. Measuring the sharp surface of cutting tools (Cutter profilometer) // Tractors and Agricultural Machinery. — 2005. — № 5. — P. 35–36. ISSN 0235-8573.
-            </p>
-            <ol class="pub-list">
+            
+            <div class="early-publication">
+              <strong>Early publication (non-security, 2005)</strong>
+              <p lang="en">Korkin I. Y., Prokoptsev P. I., Pavlishin P. P., Semenkova E. A. Measuring the sharp surface of cutting tools (Cutter profilometer) // Tractors and Agricultural Machinery. — 2005. — № 5. — P. 35–36. ISSN 0235-8573.</p>
+              <p lang="ru"><strong>Русский перевод (неофициальный):</strong> Коркин И. Ю., Прокопцев П. И., Павлишин П. П., Семенкова Е. А. Измерение остроты режущей поверхности инструментов (профилометр режущей кромки) // Тракторы и сельскохозяйственные машины. — 2005. — № 5. — С. 35–36. ISSN 0235-8573.</p>
+            </div>
+                        <h4 class="bibliography-year">2025</h4>
+            <ol class="pub-list" start="1">
               <li class="bibliography-entry">
                 <strong class="record-title">О подходе к защите приложений класса «менеджер паролей» от перехвата клавиатурного ввода</strong>
                 <ul class="record-details">
@@ -1164,6 +1172,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2024</h4>
+            <ol class="pub-list" start="2">
               <li class="bibliography-entry">
                 <strong class="record-title">Гибридная схема направленного фаззинг тестирования ядра Linux с использованием инструмента Syzkaller</strong>
                 <ul class="record-details">
@@ -1172,6 +1183,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2023</h4>
+            <ol class="pub-list" start="3">
               <li class="bibliography-entry">
                 <strong class="record-title">ALPChecker — Detecting Spoofing and Blinding Attacks</strong>
                 <ul class="record-details">
@@ -1196,6 +1210,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2022</h4>
+            <ol class="pub-list" start="6">
               <li class="bibliography-entry">
                 <strong class="record-title">Анализ безопасности подсистем локальной аутентификации ОС семейств Windows и Linux</strong>
                 <ul class="record-details">
@@ -1268,6 +1285,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2021</h4>
+            <ol class="pub-list" start="15">
               <li class="bibliography-entry">
                 <strong class="record-title">Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</strong>
                 <ul class="record-details">
@@ -1324,6 +1344,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2020</h4>
+            <ol class="pub-list" start="22">
               <li class="bibliography-entry">
                 <strong class="record-title">Windows Kernel Hijacking is Not an Option: MemoryRanger Comes to the Rescue Again</strong>
                 <ul class="record-details">
@@ -1340,6 +1363,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://elibrary.ru/item.asp?id=43092509">https://elibrary.ru/item.asp?id=43092509</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2019</h4>
+            <ol class="pub-list" start="24">
               <li class="bibliography-entry">
                 <strong class="record-title">MemoryRanger Prevents Hijacking FILE_OBJECT Structures in Windows Kernel — ADFSL</strong>
                 <ul class="record-details">
@@ -1405,6 +1431,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf">https://vipforum.ru/upload/events/vshe/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%A3%D0%98%D0%912019_%D0%A4.pdf</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2018</h4>
+            <ol class="pub-list" start="32">
               <li class="bibliography-entry">
                 <strong class="record-title">Hypervisor-Based Active Data Protection for Integrity and Confidentiality of Dynamically Allocated Memory in Windows Kernel</strong>
                 <ul class="record-details">
@@ -1421,6 +1450,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668">https://www.blackhat.com/eu-18/briefings/schedule/index.html#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2017</h4>
+            <ol class="pub-list" start="34">
               <li class="bibliography-entry">
                 <strong class="record-title">Detect Kernel-Mode Rootkits via Real-Time Logging &amp; Controlling Memory Access</strong>
                 <ul class="record-details">
@@ -1429,6 +1461,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://commons.erau.edu/adfsl/2017/papers/5/">https://commons.erau.edu/adfsl/2017/papers/5/</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2016</h4>
+            <ol class="pub-list" start="35">
               <li class="bibliography-entry">
                 <strong class="record-title">Acceleration of Statistical Detection of Zero-day Malware in the Memory Dump Using CUDA-enabled GPU Hardware</strong>
                 <ul class="record-details">
@@ -1453,6 +1488,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx">http://sk.ru/news/b/pressreleases/archive/2016/12/02/skolkovo-cybersecurity-challenge-2016-otobrano-15-proektovfinalistov.aspx</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2015</h4>
+            <ol class="pub-list" start="38">
               <li class="bibliography-entry">
                 <strong class="record-title">Two Challenges of Stealthy Hypervisors Detection: Time Cheating and Data Fluctuations — ADFSL</strong>
                 <ul class="record-details">
@@ -1470,6 +1508,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body">Journal article: <a href="https://commons.erau.edu/jdfsl/vol10/iss2/2/">https://commons.erau.edu/jdfsl/vol10/iss2/2/</a><br />Journal issue: <a href="https://commons.erau.edu/jdfsl/vol10/iss2/">https://commons.erau.edu/jdfsl/vol10/iss2/</a><br />DOI: <a href="https://doi.org/10.15394/jdfsl.2015.1200">https://doi.org/10.15394/jdfsl.2015.1200</a><br />Related ADFSL paper: <a href="https://commons.erau.edu/adfsl/2015/tuesday/7/">https://commons.erau.edu/adfsl/2015/tuesday/7/</a><br />Research details / blog: <a href="https://igorkorkin.blogspot.com/2015/05/two-challenges-of-stealthy-hypervisors.html">https://igorkorkin.blogspot.com/2015/05/two-challenges-of-stealthy-hypervisors.html</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2014</h4>
+            <ol class="pub-list" start="40">
               <li class="bibliography-entry">
                 <strong class="record-title">Applying Memory Forensics to Rootkit Detection</strong>
                 <ul class="record-details">
@@ -1478,6 +1519,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2013</h4>
+            <ol class="pub-list" start="41">
               <li class="bibliography-entry">
                 <strong class="record-title">Руткиты: проблемы безопасности и тенденции развития</strong>
                 <ul class="record-details">
@@ -1494,6 +1538,9 @@
                   <li class="record-detail"><strong>Links</strong><div class="record-detail-body"><a href="https://xakep.ru/2013/05/01/60595/">https://xakep.ru/2013/05/01/60595/</a></div></li>
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2012</h4>
+            <ol class="pub-list" start="43">
               <li class="bibliography-entry">
                 <strong class="record-title">Обоснование критериев присутствия программного обеспечения, использующего технологию аппаратной виртуализации, в компьютерных системах</strong>
                 <ul class="record-details">
@@ -1526,6 +1573,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2011</h4>
+            <ol class="pub-list" start="47">
               <li class="bibliography-entry">
                 <strong class="record-title">Метод выявления аппаратной виртуализации в компьютерных системах на основе механизма кэширования</strong>
                 <ul class="record-details">
@@ -1582,6 +1632,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2010</h4>
+            <ol class="pub-list" start="54">
               <li class="bibliography-entry">
                 <strong class="record-title">Метод обнаружения аппаратной виртуализации в компьютерных системах</strong>
                 <ul class="record-details">
@@ -1614,6 +1667,9 @@
                   
                 </ul>
               </li>
+            </ol>
+            <h4 class="bibliography-year">2009</h4>
+            <ol class="pub-list" start="58">
               <li class="bibliography-entry">
                 <strong class="record-title">Технологии сокрытия вредоносных программ и новые способы противодействия им</strong>
                 <ul class="record-details">
