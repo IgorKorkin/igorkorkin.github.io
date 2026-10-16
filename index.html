@@ -779,6 +779,46 @@
     .bibliography-note { margin: 14px 0; color: var(--muted); font-size: .93rem; }
     .full-bibliography .pub-list { padding-left: 24px; margin-top: 14px; overflow-wrap: anywhere; }
     .full-bibliography .pub-list li { margin-bottom: 11px; }
+
+    /* Academic landing introduction: prominent buttons, restrained emphasis */
+    .hero-specialties {
+      color: var(--text);
+      font-size: .94rem;
+      line-height: 1.6;
+      margin: -3px 0 16px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 19px;
+    }
+    .hero-actions a,
+    .hero-actions a:visited {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      color: #fff;
+      background: #111827;
+      border: 1px solid #111827;
+      border-radius: 2px;
+      font-size: .92rem;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+    .hero-actions a:hover,
+    .hero-actions a:focus-visible {
+      background: #334155;
+      border-color: #334155;
+      color: #fff;
+    }
+    .about-lead strong { font-weight: 700; color: var(--text); }
+    @media (max-width: 760px) {
+      .hero-actions { gap: 7px; }
+      .hero-actions a { padding: 8px 10px; min-height: 38px; }
+    }
   </style>
 </head>
 
@@ -805,8 +845,15 @@
     </aside>
     <header id="home">
       <div>
-        <h1>Igor Korkin, PhD</h1>        
-        <p class="subtitle">Operating System Security Researcher | Windows Internals · Kernel Security · Isolation</p>
+        <h1>Igor Korkin, PhD</h1>
+        <p class="subtitle">Operating System Security Researcher</p>
+        <p class="hero-specialties"><strong>Windows Internals</strong> | <strong>Kernel Security</strong> | <strong>Hypervisor-based Protection</strong> | <strong>Desktop Isolation</strong></p>
+        <nav class="hero-actions" aria-label="Key research and contact links">
+          <a href="mailto:igor.korkin@gmail.com">Email</a>
+          <a href="https://github.com/IgorKorkin">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/igor-korkin/">LinkedIn</a>
+        </nav>
         <p class="nav-section">
           <a href="#about">About</a> —
           <a href="#talks">Talks</a> —
@@ -880,23 +927,22 @@
 
         <div class="lang-panel lang-panel-en">
           <p>
-            I am an operating-system security researcher and a PhD in information security,
-            with a background in Windows internals, kernel protection, hardware-assisted
-            virtualization, and memory forensics. My work combines low-level system
-            programming with experimental security research and practical defensive mechanisms.
+            I am a <strong>PhD researcher in operating-system security</strong>, specializing in
+            <strong>Windows internals, kernel protection, hypervisor-based isolation,
+            and memory forensics</strong>. I develop and evaluate practical security mechanisms
+            through low-level systems programming and experimental research.
           </p>
           <p>
-            I graduated from Department No. 42 at National Research Nuclear University MEPhI
-            in Moscow. My professional experience includes cybersecurity research projects
-            at Huawei Technologies and Binarly. I have presented research at Black Hat,
-            HITB, LABScon, and other international conferences, and supervise student
-            research in information security at MEPhI.
+            I am an alumnus of <strong>National Research Nuclear University MEPhI</strong>.
+            My professional background includes cybersecurity research at
+            <strong>Huawei Technologies</strong> and <strong>Binarly</strong>.
+            I have presented my work at <strong>Black Hat, HITB, and LABScon</strong>
+            and supervise student research at MEPhI.
           </p>
           <p>
-            Explore <a href="#research">research projects</a>,
-            <a href="#publications">selected publications</a>,
-            <a href="#talks">conference talks</a>, or the
-            <a href="#bibliography">publication bibliography</a>.
+            Explore my <a href="#research">research projects</a>,
+            <a href="#publications">publications</a>, and
+            <a href="#talks">conference talks</a>.
           </p>
           <h3>Education</h3>
           <ul>
@@ -909,23 +955,21 @@
 
         <div class="lang-panel lang-panel-ru" lang="ru" data-nosnippet>
           <p>
-            Я исследователь безопасности операционных систем, кандидат технических наук
-            по специальности 05.13.19. Основные направления моей работы —
-            внутренние механизмы Windows, защита ядра, аппаратная виртуализация
-            и анализ оперативной памяти. В исследованиях сочетаю системное
-            программирование, экспериментальный анализ и разработку средств защиты.
+            Я <strong>кандидат технических наук, исследователь безопасности операционных систем</strong>.
+            Мои основные направления — <strong>внутренние механизмы Windows,
+            защита ядра, гипервизорная изоляция и анализ оперативной памяти</strong>.
+            Разрабатываю и экспериментально исследую механизмы защиты на уровне операционной системы.
           </p>
           <p>
-            Выпускник кафедры № 42 НИЯУ МИФИ. Участвовал в международных проектах
-            по кибербезопасности в Huawei Technologies и Binarly. Представлял
-            результаты исследований на конференциях Black Hat, HITB, LABScon
-            и других площадках, а также руковожу научными работами студентов МИФИ.
+            Выпускник <strong>НИЯУ МИФИ</strong>. Работал над исследовательскими проектами
+            по кибербезопасности в <strong>Huawei Technologies</strong> и <strong>Binarly</strong>.
+            Выступал на <strong>Black Hat, HITB и LABScon</strong>,
+            руковожу научными работами студентов МИФИ.
           </p>
           <p>
             Подробнее: <a href="#research">исследовательские проекты</a>,
-            <a href="#publications">избранные публикации</a>,
-            <a href="#talks">конференции</a> и
-            <a href="#bibliography">полный список публикаций</a>.
+            <a href="#publications">публикации</a> и
+            <a href="#talks">доклады</a>.
           </p>
           <h3>Образование</h3>
           <ul>
