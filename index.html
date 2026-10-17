@@ -1036,17 +1036,17 @@
 
         <div class="lang-panel lang-panel-en">
           <p>
-            I am an <strong>operating-system security researcher with a PhD in Information Security</strong>, specializing in
-            <strong>Windows internals, kernel protection, hypervisor-based isolation,
-            and memory forensics</strong>. I develop and evaluate practical security mechanisms
-            through low-level systems programming and experimental research.
+            I am an <strong>operating-system security researcher with a PhD in Information Security</strong>.
+            I work on <strong>Windows internals, kernel memory protection, hypervisors,
+            and memory forensics</strong>. I build prototypes, run experiments, and
+            study how attacks and defenses behave inside the operating system.
           </p>
           <p>
-            I am an alumnus of <strong>National Research Nuclear University MEPhI</strong>.
-            My professional background includes cybersecurity research at
-            <strong>Huawei Technologies</strong> and <strong>Binarly</strong>.
-            I have presented my work at <strong>Black Hat, HITB, and LABScon</strong>
-            and supervise student research at MEPhI.
+            I graduated from <strong>National Research Nuclear University MEPhI</strong>
+            and worked on security research at <strong>Huawei Technologies</strong>
+            and <strong>Binarly</strong>. I have spoken at
+            <strong>Black Hat, HITB, and LABScon</strong> and supervise
+            student research at MEPhI.
           </p>
           <p>
             Explore my <a href="#research">research projects</a>,
@@ -1112,20 +1112,17 @@
         <section id="research" aria-labelledby="research-heading">
           <h2 id="research-heading">Selected Research</h2>
           <p class="research-intro">
-            My published research spans hypervisor-based kernel protection,
-            detection of stealth hypervisors, memory forensics, rootkit
-            detection, and Windows endpoint telemetry security. The projects
-            connect research methods to publications, code, and conference talks.
+            Four areas of my published work are shown below, with links to
+            the papers, code, and conference talks behind them.
           </p>
           <div class="research-grid">
             <article class="research-project">
               <p class="research-area">Hypervisor-based Kernel Protection</p>
               <h3>MemoryRanger</h3>
               <p>
-                Proposed and experimentally evaluated a hypervisor-based kernel
-                isolation method using Intel VT-x and EPT to place newly loaded
-                drivers in separate memory enclaves. Demonstrations showed protection
-                of kernel code and data from unauthorized driver access.
+                MemoryRanger uses Intel VT-x and EPT to give Windows kernel drivers
+                separate memory-access rules. The goal is to prevent a compromised
+                driver from reading or modifying protected kernel code and data.
               </p>
               <p class="research-artifacts">
                 <a href="https://github.com/IgorKorkin/MemoryRanger">Source code</a> ·
@@ -1137,11 +1134,10 @@
               <p class="research-area">Windows Kernel Security</p>
               <h3>Memory Forensics &amp; Rootkit Detection</h3>
               <p>
-                Developed and investigated memory-forensics techniques for detecting
-                kernel-mode rootkits, including hidden processes, drivers, and
-                other concealed system objects. Preliminary experiments demonstrated
-                a ~3× speedup in statistical memory-dump analysis using CUDA-enabled
-                GPU parallel processing.
+                Memory analysis can uncover processes, drivers, and other objects
+                that rootkits hide from standard Windows APIs. In later work,
+                we used CUDA-enabled GPUs to speed up statistical memory-dump
+                analysis. Preliminary tests showed approximately a 3× speedup.
               </p>
               <p class="research-artifacts">
                 <a href="https://commons.erau.edu/adfsl/2014/wednesday/1/">ADFSL 2014 paper</a> ·
@@ -1153,11 +1149,10 @@
               <p class="research-area">Virtualization Security &amp; Rootkit Detection</p>
               <h3>Stealth Hypervisor Detection</h3>
               <p>
-                Developed and experimentally evaluated statistical instruction-timing
-                methods for detecting stealth hypervisors despite timing manipulation
-                and measurement fluctuations. The research also addresses detection
-                of multiple nested hypervisors and includes tests on Intel and AMD
-                processors, building on PhD research defended in 2012.
+                How do you detect a hypervisor that tries to hide its timing
+                overhead? My PhD research used statistical instruction-timing
+                analysis to tackle timing manipulation, noisy measurements, and
+                nested hypervisors. The methods were tested on Intel and AMD processors.
               </p>
               <p class="research-artifacts">
                 <a href="phd.html">PhD thesis</a> ·
@@ -1169,10 +1164,10 @@
               <p class="research-area">Endpoint Telemetry &amp; Evasion</p>
               <h3>ETW &amp; WMI Security</h3>
               <p>
-                Identified and experimentally demonstrated attacks targeting Windows
-                Event Tracing (ETW) and Windows Management Instrumentation (WMI).
-                The research reveals how endpoint monitoring can be blinded or
-                bypassed, exposing limitations in EDR and SIEM visibility.
+                At Black Hat Europe 2021 and Black Hat USA 2022, we demonstrated
+                how attacks on Windows ETW and WMI can blind or bypass the telemetry
+                used by EDR and SIEM products. Both talks show what defenders can
+                miss when those monitoring mechanisms are attacked.
               </p>
               <p class="research-artifacts">
                 <a href="https://i.blackhat.com/EU-21/Wednesday/EU-21-Teodorescu-Veni-No-Vidi-No-Vici-Attacks-On-ETW-Blind-EDRs.pdf">Black Hat Europe 2021 slides</a> ·
@@ -1857,11 +1852,11 @@
 
         <section id="talks">
           <h2>Selected Conference Talks</h2>
-          <p class="talks-intro">Recent presentations and selected international talks. Historical talks and video recordings are preserved below.</p>
+          <p class="talks-intro">Recent talks on Windows Desktop security, followed by earlier work on kernel protection, telemetry attacks, and Windows internals. Slides and recordings are linked where available.</p>
           <div class="paper">
             <h3>Beyond Secure Desktop: Abusing and Hardening Windows Desktop Isolation</h3>
             <p class="venue">OFFZONE 2026 · Main Track · Moscow, August 21, 2026</p>
-            <p>Technical research on Windows Desktop security, access controls, and protection of interactive sessions.
+            <p>I looked at Windows Desktop access controls, keylogging risks, and ways to isolate interactive sessions.
             </p>
             <ul class="record-details">
               <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И. Ю. Практический анализ безопасности Windows Desktop: атаки кейлоггеров и способы защиты : доклад на VII Международной конференции по практической кибербезопасности OFFZONE 2026, Москва, 21 августа 2026 г.</div></li>
@@ -1872,7 +1867,7 @@
           <div class="paper">
             <h3>Windows Desktop Isolation Research</h3>
             <p class="venue">Pass the SALT 2026 · July 2026</p>
-            <p>Presentation on Windows Desktop isolation and related attack surfaces.
+            <p>I discussed Windows Desktop isolation and the attack surface around it.
             </p>
           </div>
           <h3 class="talks-archive-heading">Earlier Selected Talks</h3>
