@@ -435,8 +435,10 @@
       overflow: hidden;
     }
 
-    .video-grid > :last-child:nth-child(3n + 1) {
-      grid-column: 2;
+    @media (min-width: 981px) {
+      .video-grid > :last-child:nth-child(3n + 1) {
+        grid-column: 2;
+      }
     }
 
     .video-featured {
@@ -681,8 +683,7 @@
       }
 
       header h1,
-      header .subtitle,
-      header .nav-section {
+      header .subtitle {
         grid-column: 2;
       }
 
@@ -701,16 +702,24 @@
         font-size: 0.95rem;
       }
 
-      header .nav-section {
+      header .hero-specialties {
         grid-column: 1 / -1;
         grid-row: 3;
-        margin-top: 12px;
+        margin: 12px 0 4px;
+      }
+
+      header .hero-actions {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        margin: 0 0 4px;
       }
 
       header .links-grid {
         grid-column: 1 / -1;
-        grid-row: 4;
+        grid-row: 5;
+        min-width: 0;
       }
+      header .links-grid-values { min-width: 0; overflow-wrap: anywhere; }
 
       .section-heading {
         align-items: flex-start;
@@ -965,15 +974,6 @@
           <a href="https://scholar.google.com/citations?user=0RJh3vYAAAAJ">Google Scholar</a>
           <a href="https://www.linkedin.com/in/igor-korkin/">LinkedIn</a>
         </nav>
-        <p class="nav-section">
-          <a href="#about">About</a> —
-          <a href="#talks">Talks</a> —
-          <a href="#recorded-talks">Videos</a> —
-          <a class="nav-monograph" href="https://igorkorkin.github.io/monograph/">Monograph</a> —
-          <a href="cv/resume.igor.korkin.pdf">CV</a> —
-          <a href="#awards">Awards</a> —
-          <a href="https://igorkorkin.blogspot.com/" target="_blank" rel="noopener noreferrer">My blog</a>
-        </p>
 
         <div class="links-grid">
           <div class="links-grid-label">Contact:</div>
@@ -1031,14 +1031,14 @@
         <div class="section-heading">
           <h2><span class="lang-panel lang-panel-en">About</span><span class="lang-panel lang-panel-ru">Обо мне</span></h2>
           <div class="lang-switch" aria-label="About language">
-            <button class="lang-btn active" type="button" data-lang="en">EN</button>
-            <button class="lang-btn" type="button" data-lang="ru">RU</button>
+            <button class="lang-btn active" type="button" data-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
           </div>
         </div>
 
         <div class="lang-panel lang-panel-en">
           <p>
-            I am a <strong>PhD researcher in operating-system security</strong>, specializing in
+            I am an <strong>operating-system security researcher with a PhD in Information Security</strong>, specializing in
             <strong>Windows internals, kernel protection, hypervisor-based isolation,
             and memory forensics</strong>. I develop and evaluate practical security mechanisms
             through low-level systems programming and experimental research.
@@ -2201,6 +2201,7 @@
         document.body.dataset.lang = button.dataset.lang;
         langButtons.forEach((item) => {
           item.classList.toggle("active", item === button);
+          item.setAttribute("aria-pressed", String(item === button));
         });
       });
     });
