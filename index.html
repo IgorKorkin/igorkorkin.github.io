@@ -1122,13 +1122,15 @@
               <p class="research-area">Hypervisor-based Kernel Protection</p>
               <h3>MemoryRanger</h3>
               <p>
-                A hypervisor-based security framework that isolates Windows kernel
-                components using Intel VT-x and Extended Page Tables (EPT),
-                protecting kernel memory against unauthorized access.
+                Proposed and experimentally evaluated a hypervisor-based kernel
+                isolation method using Intel VT-x and EPT to place newly loaded
+                drivers in separate memory enclaves. Demonstrations showed protection
+                of kernel code and data from unauthorized driver access.
               </p>
               <p class="research-artifacts">
                 <a href="https://github.com/IgorKorkin/MemoryRanger">Source code</a> ·
-                <a href="https://www.blackhat.com/eu-18/briefings/schedule/#divide-et-impera-memoryranger-runs-drivers-in-isolated-kernel-spaces-12668">Black Hat Europe 2018</a>
+                <a href="https://blackhat.com/archive/europe/2018/speakers/Igor-Korkin.html">Black Hat Europe 2018</a> ·
+                <a href="https://github.com/IgorKorkin/research/blob/main/2018/BHEU-2018/BHEU2018-slides-Divide-Et-Impera-MemoryRanger-Runs-Drivers-In-Isolated-Kernel-Spaces.pdf">Slides</a>
               </p>
             </article>
             <article class="research-project">
@@ -1151,27 +1153,31 @@
               <p class="research-area">Virtualization Security &amp; Rootkit Detection</p>
               <h3>Stealth Hypervisor Detection</h3>
               <p>
-                Statistical methods for detecting covert hardware-based
-                hypervisors through instruction-timing analysis, including
-                countermeasures against timing manipulation and measurement
-                fluctuations. Based on PhD research defended in 2012.
+                Developed and experimentally evaluated statistical instruction-timing
+                methods for detecting stealth hypervisors despite timing manipulation
+                and measurement fluctuations. The research also addresses detection
+                of multiple nested hypervisors and includes tests on Intel and AMD
+                processors, building on PhD research defended in 2012.
               </p>
               <p class="research-artifacts">
                 <a href="phd.html">PhD thesis</a> ·
-                <a href="https://commons.erau.edu/jdfsl/vol10/iss2/2/">JDFSL 2015 paper</a>
+                <a href="https://commons.erau.edu/jdfsl/vol10/iss2/2/">JDFSL 2015 paper</a> ·
+                <a href="https://github.com/IgorKorkin/research/blob/main/2015/cdfsl15_korkin_slides.pdf">ADFSL 2015 slides</a>
               </p>
             </article>
             <article class="research-project">
               <p class="research-area">Endpoint Telemetry &amp; Evasion</p>
               <h3>ETW &amp; WMI Security</h3>
               <p>
-                Experimental research into attack vectors targeting Windows Event
-                Tracing (ETW) and Windows Management Instrumentation (WMI),
-                demonstrating weaknesses that can reduce EDR and SIEM visibility.
+                Identified and experimentally demonstrated attacks targeting Windows
+                Event Tracing (ETW) and Windows Management Instrumentation (WMI).
+                The research reveals how endpoint monitoring can be blinded or
+                bypassed, exposing limitations in EDR and SIEM visibility.
               </p>
               <p class="research-artifacts">
-                <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs">Black Hat Europe 2021</a> ·
-                <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211">Black Hat USA 2022</a>
+                <a href="https://i.blackhat.com/EU-21/Wednesday/EU-21-Teodorescu-Veni-No-Vidi-No-Vici-Attacks-On-ETW-Blind-EDRs.pdf">Black Hat Europe 2021 slides</a> ·
+                <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211">Black Hat USA 2022</a> ·
+                <a href="https://www.youtube.com/watch?v=wZG0h1q7fMg">ETW talk video</a>
               </p>
             </article>
 
