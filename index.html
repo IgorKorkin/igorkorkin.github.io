@@ -967,7 +967,7 @@
       <div>
         <h1>Igor Korkin, PhD</h1>
         <p class="subtitle">Operating System Security Researcher</p>
-        <p class="hero-specialties"><strong>Windows Internals</strong> | <strong>Kernel Security</strong> | <strong>Hypervisor-based Protection</strong> | <strong>Desktop Isolation</strong></p>
+        <p class="hero-specialties"><strong>Windows Internals</strong> | <strong>Kernel Security</strong> | <strong>Hypervisor-based Protection</strong> | <strong>Rootkit Detection</strong></p>
         <nav class="hero-actions" aria-label="Key research and contact links">
           <a href="mailto:igor.korkin@gmail.com">Email</a>
           <a href="https://github.com/IgorKorkin">GitHub</a>
@@ -1015,8 +1015,6 @@
     <section class="hero-topics" aria-label="Research areas">
       <p class="hero-topics-label">Research Areas</p>
       <div class="topic-list">
-        <span>Windows Desktop &amp; GUI Isolation</span>
-        <span>Secure Execution of AI Agents</span>
         <span>Windows kernel security</span>
         <span>Intel VT-x / EPT</span>
         <span>Hypervisor-based protection</span>
@@ -1114,34 +1112,19 @@
         <section id="research" aria-labelledby="research-heading">
           <h2 id="research-heading">Selected Research</h2>
           <p class="research-intro">
-            My research focuses on operating-system isolation and defense mechanisms, from
-            hardware-assisted kernel protection to Windows GUI security and constrained execution
-            of autonomous software agents. The projects below connect ideas, implementations,
-            publications, and conference presentations.
+            My published research spans hypervisor-based kernel protection,
+            detection of stealth hypervisors, memory forensics, rootkit
+            detection, and Windows endpoint telemetry security. The projects
+            connect research methods to publications, code, and conference talks.
           </p>
           <div class="research-grid">
-            <article class="research-project">
-              <p class="research-area">Windows Desktop &amp; GUI Security</p>
-              <h3>DesktopRanger</h3>
-              <p>
-                Isolation of Windows Desktop objects to reduce cross-desktop access,
-                GUI-hook exposure, and interception of user interaction.
-                Current experiments include desktop access policies and detection
-                using decoy Desktop objects.
-              </p>
-              <p class="research-artifacts">
-                <a href="https://github.com/IgorKorkin/DesktopRanger">Source code</a> ·
-                <a href="https://igorkorkin.github.io/research/">Research notes</a>
-              </p>
-            </article>
             <article class="research-project">
               <p class="research-area">Hypervisor-based Kernel Protection</p>
               <h3>MemoryRanger</h3>
               <p>
-                Hardware-assisted memory isolation for Windows kernel components
-                using Intel virtualization technology and Extended Page Tables.
-                The project investigates ways to restrict unauthorized memory
-                access by kernel-mode code.
+                A hypervisor-based security framework that isolates Windows kernel
+                components using Intel VT-x and Extended Page Tables (EPT),
+                protecting kernel memory against unauthorized access.
               </p>
               <p class="research-artifacts">
                 <a href="https://github.com/IgorKorkin/MemoryRanger">Source code</a> ·
@@ -1149,30 +1132,45 @@
               </p>
             </article>
             <article class="research-project">
-              <p class="research-area">Autonomous AI Agent Isolation</p>
-              <h3>ZIS — Protected Interactive Environment</h3>
+              <p class="research-area">Windows Kernel Security</p>
+              <h3>Memory Forensics &amp; Rootkit Detection</h3>
               <p>
-                Ongoing research on operating-system mechanisms for executing
-                autonomous AI agents with constrained access to files, processes,
-                network resources, and interactive Windows objects.
+                Research on detecting hidden kernel-mode threats through
+                Windows memory analysis, including techniques for identifying
+                concealed processes, drivers, and other malicious kernel objects.
               </p>
               <p class="research-artifacts">
-                <a href="https://github.com/IgorKorkin/DesktopRanger">Related isolation research</a>
+                <a href="https://commons.erau.edu/adfsl/2014/wednesday/1/">ADFSL 2014 paper</a>
+              </p>
+            </article>
+            <article class="research-project">
+              <p class="research-area">Virtualization Security &amp; Rootkit Detection</p>
+              <h3>Stealth Hypervisor Detection</h3>
+              <p>
+                Statistical methods for detecting covert hardware-based
+                hypervisors through instruction-timing analysis, including
+                countermeasures against timing manipulation and measurement
+                fluctuations. Based on PhD research defended in 2012.
+              </p>
+              <p class="research-artifacts">
+                <a href="phd.html">PhD thesis</a> ·
+                <a href="https://commons.erau.edu/jdfsl/vol10/iss2/2/">JDFSL 2015 paper</a>
               </p>
             </article>
             <article class="research-project">
               <p class="research-area">Endpoint Telemetry &amp; Evasion</p>
               <h3>ETW &amp; WMI Security</h3>
               <p>
-                Research into attacks and trust boundaries in Windows Event Tracing
-                (ETW) and Windows Management Instrumentation (WMI), including
-                their implications for EDR and SIEM visibility.
+                Experimental research into attack vectors targeting Windows Event
+                Tracing (ETW) and Windows Management Instrumentation (WMI),
+                demonstrating weaknesses that can reduce EDR and SIEM visibility.
               </p>
               <p class="research-artifacts">
                 <a href="https://www.binarly.io/events/veni--no-vidi--no-viciattacks-on-etw-blind-edrs">Black Hat Europe 2021</a> ·
                 <a href="https://www.blackhat.com/us-22/briefings/schedule/#blasting-event-driven-cornucopia-wmi-based-user-space-attacks-blind-siems-and-edrs-27211">Black Hat USA 2022</a>
               </p>
             </article>
+
           </div>
         </section>
 
@@ -1828,19 +1826,17 @@
             <h3>Beyond Secure Desktop: Abusing and Hardening Windows Desktop Isolation</h3>
             <p class="venue">OFFZONE 2026 · Main Track · Moscow, August 21, 2026</p>
             <p>Technical research on Windows Desktop security, access controls, and protection of interactive sessions.
-              <a href="https://github.com/IgorKorkin/DesktopRanger">Related project</a>
             </p>
             <ul class="record-details">
               <li class="record-detail"><strong>ГОСТ</strong><div class="record-detail-body">Коркин И. Ю. Практический анализ безопасности Windows Desktop: атаки кейлоггеров и способы защиты : доклад на VII Международной конференции по практической кибербезопасности OFFZONE 2026, Москва, 21 августа 2026 г.</div></li>
               <li class="record-detail"><strong>APA 7</strong><div class="record-detail-body">Korkin, I. (2026, August 21). Beyond Secure Desktop: Abusing and hardening Windows Desktop isolation [Conference presentation]. OFFZONE 2026: Seventh International Conference on Practical Cybersecurity, Moscow, Russia.</div></li>
-              <li class="record-detail"><strong>Links</strong><div class="record-detail-body">GitHub research archive: <a href="https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference">https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference</a><br />DesktopRanger GitHub: <a href="https://github.com/IgorKorkin/DesktopRanger">https://github.com/IgorKorkin/DesktopRanger</a></div></li>
+              <li class="record-detail"><strong>Links</strong><div class="record-detail-body">GitHub research archive: <a href="https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference">https://github.com/IgorKorkin/research/tree/main/2026/OFFZONE-2026-conference</a></div></li>
             </ul>
           </div>
           <div class="paper">
             <h3>Windows Desktop Isolation Research</h3>
             <p class="venue">Pass the SALT 2026 · July 2026</p>
             <p>Presentation on Windows Desktop isolation and related attack surfaces.
-              <a href="https://github.com/IgorKorkin/DesktopRanger">Related project</a>
             </p>
           </div>
           <h3 class="talks-archive-heading">Earlier Selected Talks</h3>
